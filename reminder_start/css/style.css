@@ -59,7 +59,7 @@ form .form-control {
 }
 
 .list_reminder a {
-  
+
 }
 
 footer {
@@ -78,4 +78,21 @@ footer a {
   text-align: center;
   margin: 0 auto;
   line-height: 50px;
+}
+
+table.gestion_group , .gestion_group th , .gestion_group td {
+  text-align: center;
+  padding: 0.6rem;
+  margin-left: 15px;
+  padding-left: 15px;
+}
+
+.gestion_group h3 {
+  margin-top: 25px;
+}
+
+.bouton_accueil {
+  margin-left: 20px;
+  margin-top: 20px;
+  text-decoration: underline;
 }
