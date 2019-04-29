@@ -43,7 +43,7 @@
                           <td>Dixneuf</td>
                           <td>Florent</td>
                           <td>Isfac</td>
-                          <td><a href='#'><img src="img/pens.png"=""></a></td>
+                          <td><a href='editer_contact.php'><img src="img/pens.png"=""></a></td>
                           <td><a href='#'><img src="img/cross.png"=""></a></td>
                         </tr>
                   <?php
