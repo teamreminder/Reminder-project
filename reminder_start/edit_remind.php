@@ -24,7 +24,7 @@
               <div class="form-group col-md-6">
                 <label for="inputdestinataire">Destinataire</label>
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Votre destinataire...">
-                <p>Votre destinataire a refusé le rappel</p>
+                <p>Votre destinataire a refusé le rappel</p> 
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Date de votre rappel</label>

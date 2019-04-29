@@ -17,7 +17,7 @@
 
     <section>
       <div class="container">
-        <div class="create_remind">
+        <div class="create_remind"> 
           <h3>Créer un rappel</h3>
           <form>
             <div class="form-row">
