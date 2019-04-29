@@ -33,7 +33,7 @@
             </div>
             <div class="row">
               <div class="col align-self-end">
-                <button type="submit" class="btn btn-primary">SE CONNECTER</button>
+                <a href="accueil.php">VALIDER</a>
               </div>
             </div>
           </form>

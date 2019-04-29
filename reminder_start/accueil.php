@@ -18,8 +18,12 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col align-self-end">
-            <a href="#"><img src="img/add_button.png" alt=""></a>
+          <div class="col-8">
+            <a href="creer_contact.php">créer un contact</a><br>
+            <a href="creer_groupe.php">créer un groupe</a>
+          </div>
+          <div class="col-4 align-self-end">
+            <a href="create_remind.php"><img src="img/add_button.png" alt=""></a>
           </div>
         </div>
       </div>
@@ -37,7 +41,7 @@
                     Rappel stage - (21/05/19)</p>
                   </div>
                   <div class="col-4 align-self-end">
-                    <a href='#'><img src="img/pens.png"=""></a>
+                    <a href='edit_remind.php'><img src="img/pens.png"=""></a>
                     <a href='#'><img src="img/cross.png"=""></a>
                   </div>
                 </div>
@@ -51,7 +55,6 @@
       </div>
       <div class="ad">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-9197870261646752",

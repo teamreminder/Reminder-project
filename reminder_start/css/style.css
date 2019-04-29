@@ -68,6 +68,25 @@ form .form-control {
   width: 100%;
 }
 
+.create_remind {
+  margin-bottom: 25px;
+}
+
+.create_remind h3 {
+  text-align: center;
+}
+
+.create_remind textarea {
+  width: 100%;
+  border: 1px solid #DB9000;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+.create_remind p {
+  color: red;
+}
+
 footer {
   background-color: #242B38;
   width: 100%;
