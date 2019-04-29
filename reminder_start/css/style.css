@@ -58,19 +58,14 @@ form .form-control {
   border:1px solid #DB9000;
 }
 
-<<<<<<< HEAD
-.list_reminder a {
-
-=======
 .list_reminder a img {
   width: 50px;
   height: 50px;
 }
 
-.ad img {
+.ad {
   height: 150px;
   width: 100%;
->>>>>>> 0b60b8dd0982ae8be836a7bb3903427f98d3318e
 }
 
 footer {
