@@ -11,19 +11,19 @@
   <body>
 
     <header>
-      <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a>
-      <a href="index.php"><h1>REMINDER</h1></a>
+      <a href="accueil.php"><img src="img/logo_reminder.png" alt="logo"></a>
+      <a href="accueil.php"><h1>REMINDER</h1></a>
     </header>
 
     <section>
       <div class="container">
         <div class="row">
           <div class="col-8">
-            <a href="creer_contact.php">créer un contact</a><br>
-            <a href="creer_groupe.php">créer un groupe</a>
+            <a href="gestion_contact.php">Gestion contact</a><br>
+            <a href="gestion_groupe.php">Gestion groupe</a>
           </div>
           <div class="col-4 align-self-end">
-            <a href="create_remind.php"><img src="img/add_button.png" alt=""></a>
+            <a href="create_remind.php"><img src="img/add_button.png" width="80px" height="80px"alt=""></a>
           </div>
         </div>
       </div>

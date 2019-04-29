@@ -11,8 +11,8 @@
   <body>
 
     <header>
-      <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a>
-      <a href="index.php"><h1>REMINDER</h1></a>
+      <a href="accueil.php"><img src="img/logo_reminder.png" alt="logo"></a>
+      <a href="accueil.php"><h1>REMINDER</h1></a>
     </header>
 
     <section>
@@ -28,7 +28,7 @@
 
               <table class="gestion_group">
                 <tr>
-                  <th>membres :</th>
+                  <th>membres:</th>
                 </tr>
                   <?php
                   for ($i = 1; $i <= 3; $i++) {

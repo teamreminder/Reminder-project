@@ -11,8 +11,8 @@
   <body>
 
     <header>
-      <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a>
-      <a href="index.php"><h1>REMINDER</h1></a>
+      <a href="accueil.php"><img src="img/logo_reminder.png" alt="logo"></a>
+      <a href="accueil.php"><h1>REMINDER</h1></a>
     </header>
 
     <section>

@@ -11,8 +11,8 @@
   <body>
 
     <header>
-      <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a>
-      <a href="index.php"><h1>REMINDER</h1></a>
+      <a href="accueil.php"><img src="img/logo_reminder.png" alt="logo"></a>
+      <a href="accueil.php"><h1>REMINDER</h1></a>
     </header>
 
     <section>
@@ -23,7 +23,7 @@
               <h3>Gestion des groupes</h3>
             </div>
             <div class="col align-self-end">
-              <a href="#"><img src="img/add_button.png" alt=""></a>
+              <a href="creer_groupe.php"><img src="img/add_button.png" alt=""></a>
             </div>
           </div>
         </div>

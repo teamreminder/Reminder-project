@@ -11,8 +11,8 @@
   <body>
 
     <header>
-      <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a>
-      <a href="index.php"><h1>REMINDER</h1></a>
+      <a href="accueil.php"><img src="img/logo_reminder.png" alt="logo"></a>
+      <a href="accueil.php"><h1>REMINDER</h1></a>
     </header>
 
     <section>
@@ -24,7 +24,7 @@
               <div class="form-group col-md-6">
                 <label for="inputdestinataire">Destinataire</label>
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Votre destinataire...">
-                <p>Votre destinataire a refusé le rappel</p> 
+                <p>Votre destinataire a refusé le rappel</p>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Date de votre rappel</label>
