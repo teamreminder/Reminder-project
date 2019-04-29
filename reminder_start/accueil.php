@@ -33,8 +33,8 @@
               <div class="list_reminder">
                 <div class="row">
                   <div class="col-8">
-                    <p>Florent Dixneuf</p>
-                    <p>Rappel stage - (21/05/19)</p>
+                    <p>Florent Dixneuf<br>
+                    Rappel stage - (21/05/19)</p>
                   </div>
                   <div class="col-4 align-self-end">
                     <a href='#'><img src="img/pens.png"=""></a>
@@ -48,6 +48,9 @@
             }
         ?>
 
+      </div>
+      <div class="ad">
+        <img src="img/banniere_pub.jpg" alt="">
       </div>
     </section>
 
