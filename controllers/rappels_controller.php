@@ -38,7 +38,7 @@ class RappelsController {
   return call('pages', 'error');
   // we use the given id to get the right post
   $post = Rappel::find($_GET['id']);
-  require_once('views/amendes/show.php');
+  require_once('views/rappels/show.php');
   }
 }
 ?>
