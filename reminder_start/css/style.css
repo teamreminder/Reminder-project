@@ -91,6 +91,8 @@ footer {
   background-color: #242B38;
   width: 100%;
   height: 50px;
+  position: absolute;
+  bottom: 0;
 }
 
 footer a {
@@ -118,4 +120,13 @@ table.gestion_group , .gestion_group th , .gestion_group td {
   margin-left: 20px;
   margin-top: 20px;
   text-decoration: underline;
+}
+
+form {
+  margin-top: 30px;
+}
+
+.creer_contact h3 {
+  text-align: center;
+  margin-top: 15px;
 }
