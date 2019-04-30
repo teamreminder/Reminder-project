@@ -15,7 +15,7 @@
       <a href="accueil.php"><img src="img/logo_reminder.png" alt="logo"></a>
       <a href="accueil.php"><h1>REMINDER</h1></a>
     </header>
- 
+
     <section>
       <div class="container">
         <div class="create_remind">
@@ -29,7 +29,7 @@
               </div>
               <div class="form-group col-md-6">
                 <div class="input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
-                  <input size="16" type="text" value="" readonly>
+                  <input size="30" type="text" value="" readonly>
                   <span class="add-on"><i class="icon-remove"></i></span>
                   <span class="add-on"><i class="icon-calendar"></i></span>
               </div>
