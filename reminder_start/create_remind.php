@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap_datetime/css/bootstrap-datetimepicker.min.css">
   </head>
   <body>
 
@@ -27,8 +28,11 @@
                 <p>Votre destinataire a refusé le rappel</p>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputobjet">Date de votre rappel</label>
-                <input type="datetime-local" class="form-control" id="inputPassword4">
+                <div class="input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
+                  <input size="16" type="text" value="" readonly>
+                  <span class="add-on"><i class="icon-remove"></i></span>
+                  <span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
@@ -50,6 +54,16 @@
     <footer>
       <a href="#">Politique de confidentialité</a>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="bootstrap_datetime/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({
+            format: "dd MM yyyy - hh",
+            autoclose: true,
+            todayBtn: true,
+            startDate: "2013-02-14 10:00",
+            minuteStep: 10
+        });
+    </script>
   </body>
 </html>
