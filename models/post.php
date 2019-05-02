@@ -12,13 +12,14 @@ class Rappel {
     $this->email = $email;
     $this->password = $password;
     }
+    
   public static function all() {
     $list = [];
     $db = Db::getInstance();
     $req = $db->query('SELECT * FROM rappel');
     // we create a list of Post objects from the database results
     foreach($req->fetchAll() as $post) {
-      $list[] = new Rappel($post['id_rappel'], $post['objet'], $post['date_rappel'], $post['message']);
+      $list[] = new Rappel($post['id_rappel'], $post['objet'], $post['date_rappel'], $post['message'], $post['destinataire']);
     }
     return $list;
   }
