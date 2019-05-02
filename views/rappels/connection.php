@@ -1,10 +1,10 @@
 <?php
-
+$list=[];
 if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300))&&(isset($_GET['password']) && !empty($_GET['password']) && (strlen($_GET['password']) <= 300)))
  {
-   if ($tableau==true) {
-     setcookie('utilisateur',$tableau['id_user'],time()+6000);
-     header("location: home.php");
+   if (isset($list)) {
+     setcookie('utilisateur',$list['id_user'],time()+6000);
+     header("location: ?controller=rappels&action=home");
 
    }else{
      echo "Erreur d'identification";
@@ -14,6 +14,6 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    echo "formulaire mal rempli !";
    echo "<br><a href='index.php'>retour page de connection</a>";
  }
-}
+
 
 ?>

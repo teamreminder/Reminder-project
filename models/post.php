@@ -5,14 +5,12 @@ class Rappel {
   public $id;
   public $email;
   public $password;
-  public $telephone;
 
 
-  public function __construct($id, $email, $password, $telephone) {
+  public function __construct($id, $email, $password) {
     $this->id = $id;
     $this->email = $email;
     $this->password = $password;
-    $this->telephone = $telephone;
     }
   public static function all() {
     $list = [];
@@ -28,7 +26,7 @@ class Rappel {
   public static function registerTraitement() {
     $db = Db::getInstance();
     $email=$_GET['email'];
-    $password=$_GET['password'];
+    $password= hash('sha512', $_GET['password']);
     $telephone=$_GET['telephone'];
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
@@ -37,12 +35,16 @@ class Rappel {
   }
 
   public static function connectionTraitement() {
+    $list = [];
     $db = Db::getInstance();
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
-    $req = " SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'";
-    $db->query($req);
-    $tableau=$db->fetch();
+    $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
+    foreach($req->fetchAll() as $post) {
+      $list[] = new Rappel($post['id_user'], $post['email'], $post['password']);
+    }
+    return $list;
+
   }
 
   // public static function createArdoise($prenom,$montant){
