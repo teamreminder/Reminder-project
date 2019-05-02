@@ -12,16 +12,16 @@ class Rappel {
   //   $this->prenom = $prenom;
   //   $this->montant = $montant;
   //   }
-  // public static function all() {
-  //   $list = [];
-  //   $db = Db::getInstance();
-  //   $req = $db->query('SELECT * FROM ardoise');
-  //   // we create a list of Post objects from the database results
-  //   foreach($req->fetchAll() as $post) {
-  //     $list[] = new Amende($post['id_ardoise'], $post['prenom'], $post['montant']);
-  //   }
-  //   return $list;
-  // }
+  public static function all() {
+    $list = [];
+    $db = Db::getInstance();
+    $req = $db->query('SELECT * FROM rappel');
+    // we create a list of Post objects from the database results
+    foreach($req->fetchAll() as $post) {
+      $list[] = new Rappel($post['id_rappel'], $post['objet'], $post['date_rappel'], $post['message']);
+    }
+    return $list;
+  }
   //
   // public static function createArdoise($prenom,$montant){
   //   $db = Db::getInstance();
