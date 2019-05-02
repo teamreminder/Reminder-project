@@ -1,22 +1,26 @@
 <?php
 
-$email=$_POST['email'];
-$password= hash('sha512', $_POST['password']);
-$telephone=$_POST['telephone'];
-$prenom=$_POST['prenom'];
-$nom=$_POST['nom'];
+$email=$_GET['email'];
+$password= hash('sha512', $_GET['password']);
+$telephone=$_GET['telephone'];
+$prenom=$_GET['prenom'];
+$nom=$_GET['nom'];
 
-if( isset($_POST['email']) && !empty($_POST['email']) && (strlen($_POST['email']) <= 300) &&
-isset($_POST['password']) && !empty($_POST['password']) && (strlen($_POST['password']) <= 300) &&
-isset($_POST['telephone']) && !empty($_POST['telephone']) && (strlen($_POST['telephone']) ==10) && is_int($_POST['telephone']) &&
-isset($_POST['prenom']) && !empty($_POST['prenom']) && (strlen($_POST['prenom']) <=50) &&
-isset($_POST['nom']) && !empty($_POST['nom']) && (strlen($_POST['nom']) <=50)) {
+if( isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300) &&
+isset($_GET['password']) && !empty($_GET['password']) && (strlen($_GET['password']) <= 300) &&
+isset($_GET['telephone']) && !empty($_GET['telephone']) && (strlen($_GET['telephone']) ==10) &&
+isset($_GET['prenom']) && !empty($_GET['prenom']) && (strlen($_GET['prenom']) <=50) &&
+isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50)) {
 
   echo "Votre inscription a été faite.";
 
 }else{
-  echo "Erreur dans le remplissage du formulaire.";
+  echo "Erreur dans le remplissage du formulaire.<br>";
+  echo "$email<br>";
+  echo "$password<br>";
+  echo "$telephone<br>";
+  echo "$nom<br>";
+  echo "$prenom<br>";
 }
  ?>
 <a href='index.php'>retour page se connecter</a>
- 

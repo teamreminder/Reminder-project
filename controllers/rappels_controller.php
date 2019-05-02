@@ -15,6 +15,7 @@ class RappelsController {
   // we use the given id to get the right post
   $post = Rappel::find($_GET['id']);
   require_once('views/rappels/home.php');
+}
 
   // public function create() {
   //   // we store all the posts in a variable
@@ -33,7 +34,7 @@ class RappelsController {
 
   public function registerTraitement() {
     // we store all the posts in a variable
-    $posts = Rappel::register();
+    $posts = Rappel::registerTraitement();
     require_once('views/rappels/register_traitement.php');
   }
   // public function creerArdoise() {

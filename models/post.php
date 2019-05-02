@@ -3,14 +3,16 @@ class Rappel {
   // we define 3 attributes
   // they are public so that we can access them using $post->prenom directly
   public $id;
-  public $objet;
-  public $message;
+  public $email;
+  public $password;
+  public $telephone;
 
 
-  public function __construct($id, $objet, $message) {
+  public function __construct($id, $email, $password, $telephone) {
     $this->id = $id;
-    $this->objet = $objet;
-    $this->message = $message;
+    $this->email = $email;
+    $this->password = $password;
+    $this->telephone = $telephone;
     }
   public static function all() {
     $list = [];
@@ -23,9 +25,14 @@ class Rappel {
     return $list;
   }
 
-  public static function register() {
+  public static function registerTraitement() {
     $db = Db::getInstance();
     // $newPsw = hash('sha512', $_GET['password']);
+    $email=$_GET['email'];
+    $password=$_GET['password'];
+    $telephone=$_GET['telephone'];
+    $nom=$_GET['nom'];
+    $prenom=$_GET['prenom'];
     $req = "INSERT INTO  user(email,password,telephone,nom,prenom) VALUES ('$email','$password','$telephone','$nom', '$prenom')";
     $db->query($req);
   }
