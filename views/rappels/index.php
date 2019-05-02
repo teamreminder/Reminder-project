@@ -4,7 +4,9 @@
     <a href="?controller=rappels&action=register">S'inscrire</a>
   </div>
   <div class="connexion">
-    <form>
+    <form action="index.php" method="get">
+      <input type="hidden" name="controller" value="rappels">
+      <input type="hidden" name="action" value="connection">
       <div class="form-group">
         <label for="exampleInputEmail1">Email *</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre email...">

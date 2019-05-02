@@ -27,7 +27,6 @@ class Rappel {
 
   public static function registerTraitement() {
     $db = Db::getInstance();
-    // $newPsw = hash('sha512', $_GET['password']);
     $email=$_GET['email'];
     $password=$_GET['password'];
     $telephone=$_GET['telephone'];
@@ -35,6 +34,15 @@ class Rappel {
     $prenom=$_GET['prenom'];
     $req = "INSERT INTO  user(email,password,telephone,nom,prenom) VALUES ('$email','$password','$telephone','$nom', '$prenom')";
     $db->query($req);
+  }
+
+  public static function connectionTraitement() {
+    $db = Db::getInstance();
+    $email=$_GET['email'];
+    $password= hash('sha512', $_GET['password']);
+    $req = " SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'";
+    $db->query($req);
+    $tableau=$db->fetch();
   }
 
   // public static function createArdoise($prenom,$montant){
