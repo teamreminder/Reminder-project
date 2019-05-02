@@ -16,11 +16,6 @@ isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50)) {
 
 }else{
   echo "Erreur dans le remplissage du formulaire.<br>";
-  echo "$email<br>";
-  echo "$password<br>";
-  echo "$telephone<br>";
-  echo "$nom<br>";
-  echo "$prenom<br>";
 }
  ?>
 <a href='index.php'>retour page se connecter</a>

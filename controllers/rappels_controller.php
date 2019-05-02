@@ -37,6 +37,13 @@ class RappelsController {
     $posts = Rappel::registerTraitement();
     require_once('views/rappels/register_traitement.php');
   }
+
+  public function connection() {
+    $posts = rappel::connectionTraitement();
+    require_once('views/rappels/connection.php');
+  }
+
+
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }
