@@ -6,6 +6,7 @@ class Rappel {
   public $objet;
   public $message;
 
+
   public function __construct($id, $objet, $message) {
     $this->id = $id;
     $this->objet = $objet;
