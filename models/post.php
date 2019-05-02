@@ -6,7 +6,6 @@ class Rappel {
   public $prenom;
   public $montant;
 
-
   // public function __construct($id, $prenom, $montant) {
   //   $this->id = $id;
   //   $this->prenom = $prenom;
