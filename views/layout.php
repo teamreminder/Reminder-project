@@ -12,17 +12,18 @@
   </head>
   <body>
     <header>
-      <nav>
-        <!-- <a href="?controller=rappels&action=admin">back office</a>
-        <a href="deconnection.php" title="se_deconnecter">deconnection</a> -->
-        <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a> 
-        <a href="index.php"><h1>REMINDER</h1></a>
-      </nav>
+      <!-- <a href="?controller=rappels&action=admin">back office</a>
+      <a href="deconnection.php" title="se_deconnecter">deconnection</a> -->
+      <a href="index.php"><img src="img/logo_reminder.png" alt="logo"></a>
+      <a href="index.php"><h1>REMINDER</h1></a>
     </header>
     <section>
 <?php
   require_once('routes.php');
 ?>
     </section>
+    <footer>
+      <a href="#">Politique de confidentialité</a>
+    </footer>
   </body>
 </html>

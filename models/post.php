@@ -3,14 +3,14 @@ class Rappel {
   // we define 3 attributes
   // they are public so that we can access them using $post->prenom directly
   public $id;
-  public $prenom;
-  public $montant;
+  public $objet;
+  public $message;
 
-  // public function __construct($id, $prenom, $montant) {
-  //   $this->id = $id;
-  //   $this->prenom = $prenom;
-  //   $this->montant = $montant;
-  //   }
+  public function __construct($id, $objet, $message) {
+    $this->id = $id;
+    $this->objet = $objet;
+    $this->message = $message;
+    }
   public static function all() {
     $list = [];
     $db = Db::getInstance();
@@ -21,7 +21,14 @@ class Rappel {
     }
     return $list;
   }
-  //
+
+  public static function register() {
+    $db = Db::getInstance();
+    // $newPsw = hash('sha512', $_GET['password']);
+    $req = "INSERT INTO  user(email,password,telephone,nom,prenom) VALUES ('$email','$password','$telephone','$nom', '$prenom')";
+    $db->query($req);
+  }
+
   // public static function createArdoise($prenom,$montant){
   //   $db = Db::getInstance();
   //   $req = "INSERT INTO  ardoise(prenom,montant) VALUES ('$prenom', '$montant')";

@@ -1,7 +1,7 @@
 <div class="container">
   <h2>SE CONNECTER</h2>
   <div class="inscription">
-    <a href="inscription.php">S'inscrire</a>
+    <a href="?controller=rappels&action=register">S'inscrire</a>
   </div>
   <div class="connexion">
     <form>
@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col align-self-end">
-          <button type="submit" class="btn btn-primary">SE CONNECTER</button> 
+          <button type="submit" class="btn btn-primary">SE CONNECTER</button>
         </div>
       </div>
     </form>

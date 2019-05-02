@@ -16,7 +16,16 @@ class RappelsController {
   //   $posts = Amende::all();
   //   require_once('views/amendes/admin.php');
   // }
-  //
+
+  public function register() {
+    require_once('views/rappels/register.php');
+  }
+
+  public function registerTraitement() {
+    // we store all the posts in a variable
+    $posts = Rappel::register();
+    require_once('views/rappels/register_traitement.php');
+  }
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }
