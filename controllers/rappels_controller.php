@@ -29,13 +29,18 @@ class RappelsController {
 
   public function registerTraitement() {
     // we store all the posts in a variable
-    $posts = Rappel::registerTraitement();
+    $posts = User::registerTraitement();
     require_once('views/rappels/register_traitement.php');
   }
 
   public function connection() {
-    $posts = rappel::connectionTraitement();
+    $posts = User::connectionTraitement();
     require_once('views/rappels/connection.php');
+  }
+
+  public function gestionContact() {
+    $posts = Rappel::all();
+    require_once('views/rappels/gestion_contact.php');
   }
 
 

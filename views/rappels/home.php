@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <a href="gestion_contact.php">Gestion contact</a><br>
+      <a href="?controller=rappels&action=gestionContact">Gestion contact</a><br>
       <a href="gestion_groupe.php">Gestion groupe</a>
     </div>
     <div class="col-4 align-self-end">

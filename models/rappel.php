@@ -3,16 +3,20 @@ class Rappel {
   // we define 3 attributes
   // they are public so that we can access them using $post->prenom directly
   public $id;
-  public $email;
-  public $password;
+  public $destinataire;
+  public $objet;
+  public $date_rappel;
+  public $message;
 
 
-  public function __construct($id, $email, $password) {
+  public function __construct($id, $destinataire, $objet, $date_rappel, $message) {
     $this->id = $id;
-    $this->email = $email;
-    $this->password = $password;
+    $this->destinataire = $destinataire;
+    $this->objet = $objet;
+    $this->date_rappel = $date_rappel;
+    $this->message = $message;
     }
-    
+
   public static function all() {
     $list = [];
     $db = Db::getInstance();
@@ -23,28 +27,6 @@ class Rappel {
     }
     return $list;
   }
-
-  public static function registerTraitement() {
-    $db = Db::getInstance();
-    $email=$_GET['email'];
-    $password= hash('sha512', $_GET['password']);
-    $telephone=$_GET['telephone'];
-    $nom=$_GET['nom'];
-    $prenom=$_GET['prenom'];
-    $req = "INSERT INTO  user(email,password,telephone,nom,prenom) VALUES ('$email','$password','$telephone','$nom', '$prenom')";
-    $db->query($req);
-  }
-
-  public static function connectionTraitement() {
-    $list = [];
-    $db = Db::getInstance();
-    $email=$_GET['email'];
-    $password= hash('sha512', $_GET['password']);
-    $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
-    foreach($req->fetchAll() as $post) {
-      $list[] = new Rappel($post['id_user'], $post['email'], $post['password']);
-    }
-    return $list;
 
   }
 
@@ -70,5 +52,4 @@ class Rappel {
   //   $post = $req->fetch();
   //   return new Amende($post['id_ardoise'], $post['prenom'], $post['montant']);
   // }
-}
 ?>
