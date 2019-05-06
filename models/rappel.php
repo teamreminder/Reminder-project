@@ -28,6 +28,15 @@ class Rappel {
     return $list;
   }
 
+  public static function createReminderTraitement() {
+    $db=Db::getInstance();
+    $destinataire=$_GET['destinataire'];
+    $datetime=$_GET['datetime'];
+    $objet=$_GET['objet'];
+    $message=$_GET['message'];
+    $req="INSERT INTO rappel (destinataire, objet, date_rappel, message)"
+  }
+
   }
 
   // public static function createArdoise($prenom,$montant){

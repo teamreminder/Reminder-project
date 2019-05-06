@@ -46,6 +46,9 @@ class RappelsController {
   public function createContact() {
     require_once('views/rappels/create_contact.php');
   }
+  public function createReminder() {
+    require_once('views/rappels/create_reminder.php');
+  }
 
   public function CreateContactTraitement() {
     // we store all the posts in a variable
