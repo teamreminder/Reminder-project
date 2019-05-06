@@ -43,7 +43,15 @@ class RappelsController {
     require_once('views/rappels/gestion_contact.php');
   }
 
+  public function createContact() {
+    require_once('views/rappels/create_contact.php');
+  }
 
+  public function CreateContactTraitement() {
+    // we store all the posts in a variable
+    $posts = User::CreateContactTraitement();
+    require_once('views/rappels/create_contact_traitement.php');
+  }
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }

@@ -6,7 +6,7 @@
           <h3>Gestion des contacts</h3>
         </div>
         <div class="col align-self-end">
-          <a href="creer_contact.php"><img src="img/add_button.png" alt=""></a>
+          <a href="?controller=rappels&action=createContact"><img src="img/add_button.png" alt=""></a>
         </div>
       </div>
     </div>
