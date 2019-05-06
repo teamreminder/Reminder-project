@@ -43,6 +43,10 @@ class RappelsController {
     require_once('views/rappels/gestion_contact.php');
   }
 
+  public function createReminder() {
+    require_once('views/rappels/create_reminder.php');
+  }
+
 
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');

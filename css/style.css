@@ -102,6 +102,13 @@ form .form-control {
   color: red;
 }
 
+.create_remind button, input {
+  width: 100%;
+  border: 1px solid #DB9000;
+  border-radius: 3px;
+  height: 40px;
+}
+
 footer {
   background-color: #242B38;
   width: 100%;
@@ -117,6 +124,10 @@ footer a {
   text-align: center;
   margin: 0 auto;
   line-height: 50px;
+}
+
+table {
+  width: 100%;
 }
 
 table.gestion_group , .gestion_group th , .gestion_group td {

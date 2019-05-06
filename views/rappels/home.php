@@ -5,7 +5,7 @@
       <a href="gestion_groupe.php">Gestion groupe</a>
     </div>
     <div class="col-4 align-self-end">
-      <a href="create_remind.php"><img src="img/add_button.png" width="80px" height="80px"alt=""></a>
+      <a href="?controller=rappels&action=createReminder"><img src="img/add_button.png" width="80px" height="80px"alt=""></a>
     </div>
   </div>
 </div>
