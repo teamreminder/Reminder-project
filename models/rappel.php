@@ -34,7 +34,11 @@ class Rappel {
     $datetime=$_GET['datetime'];
     $objet=$_GET['objet'];
     $message=$_GET['message'];
-    $req="INSERT INTO rappel (destinataire, objet, date_rappel, message)"
+    $req="INSERT INTO rappel (destinataire, objet, date_rappel, message)";
+    $req2="INSERT INTO envoyer(id_user,id_rappel,date_enregistrement)
+            SELECT id_user
+            FROM rappel
+            WHERE destinataire='$destinataire'";
   }
 
   }
