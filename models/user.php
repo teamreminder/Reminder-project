@@ -6,8 +6,6 @@ class User {
   public $id;
   public $email;
   public $password;
-  public $date_rappel;
-  public $message;
 
   public function __construct($id, $email, $password) {
     $this->id = $id;
@@ -31,9 +29,6 @@ class User {
     $db = Db::getInstance();
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
-    $req = "SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'";
-    $reponse=$db->query($req);
-    $tableau=$reponse->fetch();
     $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
     foreach($req->fetchAll() as $post) {
       $list[] = new User($post['id_user'], $post['email'], $post['password']);
@@ -66,6 +61,17 @@ class User {
       $req = "INSERT INTO  user(email,nom,prenom,password) VALUES ('$email','$nom', '$prenom','$password')";
       $db->query($req);
       }
+
+      // public static function find($id) {
+      //   $db = Db::getInstance();
+      //   // we make sure $id is an integer
+      //   $id = intval($id);
+      //   $req = $db->prepare("SELECT * FROM user WHERE id_user = :id");
+      //   // the query was prepared, now we replace :id with our actual $id value
+      //   $req->execute(array('id_user' => $id));
+      //   $post = $req->fetch();
+      //   return new User($post['id_user'], $post['email'], $post['password']);
+      // }
 }
 
  ?>
