@@ -62,6 +62,13 @@ form .btn-primary {
   margin-top: 30px;
 }
 
+form .btn-primary:hover {
+  border: 1px solid #DB9000;
+  background-color: white;
+  color: #DB9000;
+  -webkit-transition: 0.6s;
+}
+
 form .form-control {
   border:1px solid #DB9000;
 }
