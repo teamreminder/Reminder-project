@@ -12,7 +12,7 @@
         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre email...">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password *</label>
+        <label for="exampleInputPassword1">Password *</label> 
         <input type="password" class="form-control"  name="password" id="exampleInputPassword1" placeholder="Votre password...">
       </div>
       <div class="row">

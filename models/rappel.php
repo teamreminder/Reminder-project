@@ -39,7 +39,6 @@ class Rappel {
             SELECT id_user
             FROM rappel
             WHERE destinataire='$destinataire'";
-
   }
 
   }

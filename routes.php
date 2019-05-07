@@ -27,4 +27,5 @@ if (array_key_exists($controller, $controllers)) {
 } else {
   call('pages', 'error');
 }
+
 ?>
