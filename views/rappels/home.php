@@ -1,8 +1,3 @@
-<?php
-
-
-
-?>
 <div class="container">
   <div class="row">
     <div class="col-8">
@@ -15,24 +10,24 @@
   </div>
 </div>
 <?php
-for ($i = 1; $i <= 5; $i++) {
-?>
-      <div class="container">
-        <div class="list_reminder">
-          <div class="row">
-            <div class="col-8">
-              <p>Florent Dixneuf<br>
-              Rappel stage - (21/05/19)</p>
-            </div>
-            <div class="col-4 align-self-end">
-              <a href='edit_remind.php'><img src="img/pens.png"=""></a>
-              <a href='#'><img src="img/cross.png"=""></a>
-            </div>
-          </div>
-          <hr>
-        </div>
-      </div>
-<?php
+foreach ($posts as $post) {
+  ?>
+<div class="container">
+   <div class="list_reminder">
+     <div class="row">
+       <div class="col-8">
+         <p><?php echo $post->destinataire; ?><br>
+         Rappel : <?php echo $post->objet." ".substr($post->date_rappel, 0, -9);  ?></p>
+       </div>
+       <div class="col-4 align-self-end">
+         <a href='edit_remind.php'><img src="img/pens.png"=""></a>
+         <a href='#'><img src="img/cross.png"=""></a>
+       </div>
+     </div>
+     <hr>
+   </div>
+ </div>
+ <?php
 }
 ?>
 <div class="ad">

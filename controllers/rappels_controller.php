@@ -8,7 +8,7 @@ class RappelsController {
 
 
   public function home() {
-    $posts = Rappel::all();
+    $posts = Rappel::home();
     require_once('views/rappels/home.php');
 }
 
