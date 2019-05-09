@@ -78,6 +78,6 @@ class RappelsController {
   // $post = User::find($_GET['id']);
   // require_once('views/rappels/connection.php');
   // }
-  
+
 }
 ?>

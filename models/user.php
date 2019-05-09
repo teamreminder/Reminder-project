@@ -13,6 +13,16 @@ class User {
     $this->password = $password;
     }
 
+  private function getID()
+  {
+    return $this->_id;
+  }
+
+  private function setId($id)
+  {
+    $this->_id = $id;
+  }
+
   public static function registerTraitement() {
     $db = Db::getInstance();
     $email=$_GET['email'];
@@ -25,15 +35,17 @@ class User {
     }
 
   public static function connectionTraitement() {
-    $list = [];
+
     $db = Db::getInstance();
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
-    $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
-    foreach($req->fetchAll() as $post) {
-      $list[] = new User($post['id_user'], $post['email'], $post['password']);
+    $req = "SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'";
+    $reponse = $db->query($req);
+    foreach ($reponse as $info) {
+      $id=$info['id_user'];
+      setcookie('utilisateur',$id,time()+6000);
     }
-      return $list;
+
     }
 
     public static function CreateContactTraitement() {
