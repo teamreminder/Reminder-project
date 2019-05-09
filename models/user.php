@@ -41,11 +41,20 @@ class User {
     $password= hash('sha512', $_GET['password']);
     $req = "SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'";
     $reponse = $db->query($req);
-    foreach ($reponse as $info) {
-      $id=$info['id_user'];
-      setcookie('utilisateur',$id,time()+6000);
+      foreach ($reponse as $info) {
+        $id=$info['id_user'];
+        setcookie('utilisateur',$id,time()+6000);
+      }
     }
 
+    public static function GestionGroup(){
+      $db = Db::getInstance();
+      $req = "SELECT * FROM groupe";
+      $reponse = $db->query($req);
+      foreach ($reponse as $info) {
+        $id=$info['id_groupe'];
+        $libelle=$info['libelle'];
+      }
     }
 
     public static function CreateContactTraitement() {

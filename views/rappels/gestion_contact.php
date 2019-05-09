@@ -35,7 +35,7 @@
       </table>
       <div class="container">
         <div class="bouton_accueil">
-          <a href="accueil.php">retour accueil</a>
+          <a href="?controller=rappels&action=home">retour accueil</a>
         </div>
       </div>
     </div>
