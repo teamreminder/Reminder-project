@@ -2,8 +2,13 @@
 
 if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300))&&(isset($_GET['password']) && !empty($_GET['password']) && (strlen($_GET['password']) <= 300)))
  {
-   header("location: ?controller=rappels&action=home"); 
-
+   // if () {
+   // echo "cookie ok";
+    // setcookie('utilisateur',$id,time()+6000);
+   header("location: ?controller=rappels&action=home");
+   // }else{
+   //   echo "erreur d'identification";
+   // }
  }else {
    echo "formulaire mal rempli !";
    echo "<br><a href='index.php'>retour page de connection</a>";

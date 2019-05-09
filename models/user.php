@@ -35,7 +35,7 @@ class User {
     }
 
   public static function connectionTraitement() {
-
+    $tableau = [];
     $db = Db::getInstance();
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
@@ -43,6 +43,8 @@ class User {
     $reponse = $db->query($req);
       foreach ($reponse as $info) {
         $id=$info['id_user'];
+        $email=$info['email'];
+        $password=$info['password'];
         setcookie('utilisateur',$id,time()+6000);
       }
     }
