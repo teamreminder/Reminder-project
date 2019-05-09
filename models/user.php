@@ -72,7 +72,7 @@ class User {
       //   $post = $req->fetch();
       //   return new User($post['id_user'], $post['email'], $post['password']);
       // }
-      
+
 }
 
  ?>

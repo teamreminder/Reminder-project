@@ -5,7 +5,9 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    if (isset($list)) {
      setcookie('utilisateur',$list['id_user'],time()+6000);
      var_dump($list);
+     echo $list[0][id_user];
   //   header("location: ?controller=rappels&action=home");
+
 
    }else{
      echo "Erreur d'identification";
