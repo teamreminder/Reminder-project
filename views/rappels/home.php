@@ -9,15 +9,17 @@
     </div>
   </div>
 </div>
-<?php
-foreach ($posts as $post) {
-  ?>
 <div class="container">
    <div class="list_reminder">
+       <?php
+       foreach ($posts as $post) {
+         ?>
      <div class="row">
        <div class="col-8">
          <p><?php echo $post->destinataire; ?><br>
-         Rappel : <?php echo $post->objet." ".substr($post->date_rappel, 0, -9);  ?></p>
+          <?php echo "Objet : ".$post->objet."<br>";
+          echo substr($post->date_rappel, 0, -9);
+           ?></p>
        </div>
        <div class="col-4 align-self-end">
          <a href='edit_remind.php'><img src="img/pens.png"=""></a>
@@ -25,11 +27,11 @@ foreach ($posts as $post) {
        </div>
      </div>
      <hr>
+     <?php
+    }
+    ?>
    </div>
  </div>
- <?php
-}
-?>
 <div class="ad">
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({
