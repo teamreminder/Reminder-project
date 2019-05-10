@@ -17,17 +17,6 @@ class Rappel {
     $this->slots = $slots;
     }
 
-  public static function all() {
-    $list = [];
-    $db = Db::getInstance();
-    $req = $db->query('SELECT * FROM rappel');
-    // we create a list of Post objects from the database results
-    foreach($req->fetchAll() as $post) {
-      $list[] = new Rappel($post['id_rappel'], $post['destinataire'], $post['objet'], $post['date_rappel'], $post['message'], $post['slots']);
-    }
-    return $list;
-  }
-
   public static function createReminderTraitement() {
     $db=Db::getInstance();
     $destinataire=$_GET['destinataire'];

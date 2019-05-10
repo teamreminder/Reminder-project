@@ -23,6 +23,17 @@ class User {
     $this->_id = $id;
   }
 
+  public static function all() {
+    $list = [];
+    $db = Db::getInstance();
+    $req = $db->query('SELECT * FROM user');
+    // we create a list of Post objects from the database results
+    foreach($req->fetchAll() as $post) {
+      $list[] = new User($post['id_user'], $post['email'], $post['password']);
+    }
+    return $list;
+  }
+
   public static function registerTraitement() {
     $db = Db::getInstance();
     $email=$_GET['email'];
@@ -35,18 +46,22 @@ class User {
     }
 
   public static function connectionTraitement() {
-    $tableau = [];
+    $list = [];
     $db = Db::getInstance();
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
-    $req = "SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'";
-    $reponse = $db->query($req);
-      foreach ($reponse as $info) {
-        $id=$info['id_user'];
-        $email=$info['email'];
-        $password=$info['password'];
-        setcookie('utilisateur',$id,time()+6000);
-      }
+    $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
+    foreach($req->fetchAll() as $post) {
+      $list[] = new User($post['id_user'], $post['email'], $post['password']);
+    }
+    return $list;
+
+      // foreach ($reponse as $info) {
+      //   $id=$info['id_user'];
+      //   $email=$info['email'];
+      //   $password=$info['password'];
+      //   setcookie('utilisateur',$id,time()+6000);
+      // }
     }
 
     public static function GestionGroup(){

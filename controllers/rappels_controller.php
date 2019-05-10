@@ -2,7 +2,7 @@
 class RappelsController {
   public function index() {
     // we store all the posts in a variable
-    $posts = rappel::all();
+    $posts = User::all();
     require_once('views/rappels/index.php');
   }
 
@@ -34,12 +34,12 @@ class RappelsController {
   }
 
   public function connection() {
-    $list = User::connectionTraitement();
+    $posts = User::connectionTraitement();
     require_once('views/rappels/connection.php');
   }
 
   public function gestionContact() {
-    $posts = Rappel::all();
+    $posts = User::all();
     require_once('views/rappels/gestion_contact.php');
   }
 
