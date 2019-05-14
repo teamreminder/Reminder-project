@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col align-self-start">
-        <h3>Gestion des groupes</h3>
+        <h4>Gestion des groupes</h4>
       </div>
       <div class="col align-self-end">
-        <a href="creer_groupe.php"><img src="img/add_button.png" alt=""></a>
+        <a href="creer_groupe.php"><img src="img/add_button.png" width="80px" height="80px" alt=""></a>
       </div>
     </div>
   </div>

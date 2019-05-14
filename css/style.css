@@ -16,6 +16,7 @@ header {
   height: 100px;
   background-color: #DB9000;
   display: flex;
+  margin-bottom: 25px;
 }
 
 header a {
@@ -140,6 +141,16 @@ table {
 table.gestion_group , .gestion_group th , .gestion_group td {
   text-align: center;
   padding: 0.6rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #d7d7d7;
+}
+
+@media screen and (max-width: 360px) {
+  tbody tr{
+    font-size: 0.8em;
+  }
 }
 
 table img {

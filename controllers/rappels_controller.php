@@ -39,11 +39,12 @@ class RappelsController {
   }
 
   public function gestionContact() {
-    $posts = User::all();
+    $posts = Contact::gestionContact();
     require_once('views/rappels/gestion_contact.php');
   }
 
   public function createContact() {
+    $posts = User::all();
     require_once('views/rappels/create_contact.php');
   }
 
@@ -60,6 +61,12 @@ class RappelsController {
     $posts = User::CreateContactTraitement();
     require_once('views/rappels/create_contact_traitement.php');
   }
+
+  public function updateContact() {
+    $posts = Contact::updateContact();
+    require_once('views/rappels/update_contact.php');
+  }
+
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }

@@ -6,6 +6,9 @@ class User {
   public $id;
   public $email;
   public $password;
+  public $nom;
+  public $prenom;
+  public $libelle;
 
   public function __construct($id, $email, $password) {
     $this->id = $id;
@@ -22,6 +25,17 @@ class User {
   {
     $this->_id = $id;
   }
+
+  private function getNom()
+  {
+    return $this->_nom;
+  }
+
+  private function setNom($nom)
+  {
+    $this->_nom = $nom;
+  }
+
 
   public static function all() {
     $list = [];
@@ -56,12 +70,6 @@ class User {
     }
     return $list;
 
-      // foreach ($reponse as $info) {
-      //   $id=$info['id_user'];
-      //   $email=$info['email'];
-      //   $password=$info['password'];
-      //   setcookie('utilisateur',$id,time()+6000);
-      // }
     }
 
     public static function GestionGroup(){
@@ -99,6 +107,8 @@ class User {
       $req = "INSERT INTO  user(email,nom,prenom,password) VALUES ('$email','$nom', '$prenom','$password')";
       $db->query($req);
       }
+
+    
 
       // public static function find($id) {
       //   $db = Db::getInstance();
