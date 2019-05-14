@@ -29,9 +29,6 @@
           <?php
             }
            ?>
-
-
-
       </table>
       <div class="container">
         <div class="bouton_accueil">

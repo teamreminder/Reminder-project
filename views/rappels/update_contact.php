@@ -25,7 +25,7 @@
     <input type="hidden" name="" value="">
     <div class="row">
       <div class="col align-self-end">
-        <button type="submit" class="btn btn-primary">CRÉER</button>
+        <button type="submit" class="btn btn-primary">VALIDER</button>
       </div>
     </div>
     <?php
