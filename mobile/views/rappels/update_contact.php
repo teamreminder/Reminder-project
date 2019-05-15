@@ -1,3 +1,7 @@
+<?php
+  if (isset($_COOKIE['utilisateur'])) {
+
+ ?>
 <div class="container">
   <h4>Modifier contact</h4>
   <form action="index.php" method="GET">
@@ -36,3 +40,13 @@
     <a href="?controller=rappels&action=gestionContact">Retour</a>
   </div>
 </div>
+<?php
+}else{
+  ?>
+  <div class="container">
+    <p>session expirée ! veuillez vous reconnecter !</p>
+    <a href=?controller=rappels&action=index>retour connection</a>
+  </div>
+  <?php
+}
+ ?>

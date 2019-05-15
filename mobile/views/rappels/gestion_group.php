@@ -1,3 +1,7 @@
+<?php
+  if (isset($_COOKIE['utilisateur'])) {
+
+ ?>
 <div class="gestion_group">
   <div class="container">
     <div class="row">
@@ -33,3 +37,13 @@
       </div>
     </div>
   </div>
+  <?php
+  }else{
+    ?>
+    <div class="container">
+      <p>session expirée ! veuillez vous reconnecter !</p>
+      <a href=?controller=rappels&action=index>retour connection</a>
+    </div>
+    <?php
+  }
+   ?>

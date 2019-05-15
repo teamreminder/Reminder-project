@@ -1,3 +1,7 @@
+<?php
+  if (isset($_COOKIE['utilisateur'])) {
+
+ ?>
       <div class="container">
         <div class="create_remind">
           <h3>Créer un rappel</h3>
@@ -46,3 +50,13 @@
             minuteStep: 10
         });
     </script>
+    <?php
+    }else{
+      ?>
+      <div class="container">
+        <p>session expirée ! veuillez vous reconnecter !</p>
+        <a href=?controller=rappels&action=index>retour connection</a>
+      </div>
+      <?php
+    }
+     ?>
