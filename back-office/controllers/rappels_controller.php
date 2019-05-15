@@ -7,13 +7,18 @@ class RappelsController {
   }
 
   public function home() {
-    $posts = Rappel::home();
+    $posts = User::all();
     require_once('views/rappels/home.php');
   }
 
   public function connection() {
     $posts = User::connectionTraitement();
     require_once('views/rappels/connection.php');
+  }
+
+  public function listUser() {
+    $posts = User::all();
+    require_once('views/rappels/list_user.php');
   }
 
 }

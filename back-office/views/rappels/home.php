@@ -12,6 +12,6 @@
   </div>
   <div class="alert">
     <p>Alert / log : </p>
-    
   </div>
+  <a href="?controller=rappels&action=listUser">Liste des utilisateurs</a>
 </div>

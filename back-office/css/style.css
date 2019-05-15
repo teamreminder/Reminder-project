@@ -91,3 +91,28 @@ form .form-control {
 .alert p {
   font-weight: bold;
 }
+
+table {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+table.list_user , .list_user th , .list_user td {
+  text-align: center;
+  padding: 0.6rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #d7d7d7;
+}
+
+@media screen and (max-width: 360px) {
+  tbody tr{
+    font-size: 0.8em;
+  }
+}
+
+table img {
+  width: 25px;
+  height: 25px;
+}
