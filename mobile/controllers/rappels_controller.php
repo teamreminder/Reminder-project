@@ -8,7 +8,9 @@ class RappelsController {
 
 
   public function home() {
-    $posts = Rappel::home();
+    if (isset($_COOKIE['utilisateur'])) {
+      $posts = Rappel::home();
+    }
     require_once('views/rappels/home.php');
 }
 
@@ -39,12 +41,16 @@ class RappelsController {
   }
 
   public function gestionContact() {
+    if (isset($_COOKIE['utilisateur'])) {
     $posts = Contact::gestionContact();
+  }
     require_once('views/rappels/gestion_contact.php');
   }
 
   public function createContact() {
+    if (isset($_COOKIE['utilisateur'])) {
     $posts = User::all();
+  }
     require_once('views/rappels/create_contact.php');
   }
 
@@ -57,13 +63,16 @@ class RappelsController {
   }
 
   public function CreateContactTraitement() {
-    // we store all the posts in a variable
+    if (isset($_COOKIE['utilisateur'])) {
     $posts = User::CreateContactTraitement();
+  }
     require_once('views/rappels/create_contact_traitement.php');
   }
 
   public function updateContact() {
+    if (isset($_COOKIE['utilisateur'])) {
     $posts = Contact::updateContact();
+  }
     require_once('views/rappels/update_contact.php');
   }
 
@@ -81,15 +90,6 @@ class RappelsController {
   //   require_once('views/amendes/update_traitement.php');
   // }
 
-  // public function show() {
-  // // we expect a url of form ?controller=posts&action=show&id=x
-  // // without an id we just redirect to the error page as we need the post id to find it in the database
-  // if (!isset($_GET['id']))
-  // return call('pages', 'error');
-  // // we use the given id to get the right post
-  // $post = User::find($_GET['id']);
-  // require_once('views/rappels/connection.php');
-  // }
 
 }
 ?>

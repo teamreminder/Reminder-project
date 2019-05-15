@@ -1,5 +1,5 @@
 <?php
-
+if (isset($_COOKIE['utilisateur'])) {
 $email=$_GET['email'];
 $prenom=$_GET['prenom'];
 $nom=$_GET['nom'];
@@ -24,3 +24,13 @@ $nom=$_GET['nom'];
     <a href='?controller=rappels&action=home'>retour à l'accueil</a>
   </div>
 </div>
+<?php
+}else{
+  ?>
+  <div class="container">
+    <p>session expirée ! veuillez vous reconnecter !</p>
+    <a href=?controller=rappels&action=index>retour connection</a>
+  </div>
+  <?php
+}
+ ?>

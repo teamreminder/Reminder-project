@@ -9,8 +9,6 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    header("location: ?controller=rappels&action=home");
    }else{
       echo "erreur d'identification";
-      echo $post->password."<br>";
-      echo $_GET['password']."<br>";
  }
  }else {
    echo "formulaire mal rempli !";
