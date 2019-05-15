@@ -7,7 +7,7 @@ class RappelsController {
   }
 
   public function home() {
-    $posts = Rappel::home();
+    $posts = User::all();
     require_once('views/rappels/home.php');
   }
 
@@ -17,6 +17,7 @@ class RappelsController {
   }
 
   public function listUser() {
+    $posts = User::all();
     require_once('views/rappels/list_user.php');
   }
 
