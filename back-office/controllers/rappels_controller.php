@@ -16,5 +16,9 @@ class RappelsController {
     require_once('views/rappels/connection.php');
   }
 
+  public function listUser() {
+    require_once('views/rappels/list_user.php');
+  }
+
 }
 ?>
