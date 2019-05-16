@@ -66,7 +66,7 @@ class User {
     $password= hash('sha512', $_GET['password']);
     $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
     foreach($req->fetchAll() as $post) {
-      $list[] = new User($post['id_user'], $post['email'], $post['password']);
+      $list[] = new User($post['id_user'], $post['email'], $post['password']); 
     }
     return $list;
 
@@ -108,7 +108,7 @@ class User {
       $db->query($req);
       }
 
-    
+
 
       // public static function find($id) {
       //   $db = Db::getInstance();
