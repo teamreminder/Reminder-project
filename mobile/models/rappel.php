@@ -23,11 +23,9 @@ class Rappel {
     $datetime=$_GET['datetime'];
     $objet=$_GET['objet'];
     $message=$_GET['message'];
-    $req="INSERT INTO rappel (destinataire, objet, date_rappel, message)";
-    $req2="INSERT INTO envoyer(id_user,id_rappel,date_enregistrement)
-            SELECT id_user
-            FROM rappel
-            WHERE destinataire='$destinataire'";
+    $cookie=$_COOKIE['utilisateur'];
+    $today=date("Y-m-d H:i:s");
+    $req="INSERT INTO `rappel` (`objet`, `date_rappel`, `message`, `date_enregistrement`, `id_user`, `id_user_etre_destinataire`) VALUES ($objet, $datetime, $message, $today, $cookie, '3')";
   }
 
   public static function home() {

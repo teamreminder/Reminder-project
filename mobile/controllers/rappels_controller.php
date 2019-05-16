@@ -59,6 +59,10 @@ class RappelsController {
     require_once('views/rappels/create_reminder.php');
   }
 
+  public function createReminderTraitement() {
+    require_once('views/rappels/create_reminder_traitement.php');
+  }
+
   public function CreateContactTraitement() {
     if (isset($_COOKIE['utilisateur'])) {
     $posts = User::CreateContactTraitement();
