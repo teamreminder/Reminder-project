@@ -6,7 +6,7 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    $id=$post->id;
    echo "cookie ok";
    setcookie('utilisateur',$id,time()+6000);
-   // header("location: ?controller=rappels&action=home");
+   header("location: ?controller=rappels&action=home");
    }else{
       echo "erreur d'identification";
  }
