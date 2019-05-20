@@ -1,16 +1,16 @@
 <?php
 foreach ($posts as $post) {
-  $id=$post->id;
   $email=$post->email;
   $password=$post->password;
+  $id=$post->id;
 
 }
 
 if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300))&&(isset($_GET['password']) && !empty($_GET['password']) && (strlen($_GET['password']) <= 300)))
  {
-   echo "string";
    if ($_GET['email']==$email && hash('sha512', $_GET['password'])==$password) {
-   $id=$post->id;
+   // $id=$post->id;
+   echo "cookie ok";
    setcookie('utilisateur',$id,time()+6000);
    header("location: ?controller=rappels&action=home");
    }else{
@@ -20,6 +20,10 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
 }else {
    echo "formulaire mal rempli !";
    echo "<br><a href='index.php'>retour page de connection</a>";
-}
+
+ }
+
+
+
 
 ?>
