@@ -1,6 +1,13 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
-
+    foreach ($posts as $post) {
+      echo $post->id_user;
+      echo $post->objet;
+      echo $post->date_rappel;
+      echo $post->id_rappel;
+      echo $post->email;
+    }
+    echo var_dump($tableau);
  ?>
       <div class="container">
         <div class="create_remind">

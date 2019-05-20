@@ -56,6 +56,7 @@ class RappelsController {
   }
 
   public function createReminder() {
+    $posts = Rappel::createReminder();
     require_once('views/rappels/create_reminder.php');
   }
 
