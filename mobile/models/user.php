@@ -65,11 +65,10 @@ class User {
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
     $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
-    foreach($req->fetchAll() as $post) {
-      $list[] = new User($post['id_user'], $post['email'], $post['password']); 
-    }
+      foreach($req->fetchAll() as $post) {
+        $list[] = new User($post['id_user'], $post['email'], $post['password']);
+      }
     return $list;
-
     }
 
     public static function GestionGroup(){
