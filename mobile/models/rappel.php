@@ -48,15 +48,15 @@ class Rappel {
     $list = [];
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];
-    $req = $db->query("SELECT SELECT id_rappel,date_rappel,message, email, rappel.id_user as id_destinataire
+    $req = $db->query("SELECT SELECT id_rappel, date_rappel, objet, email, rappel.id_user as id_destinataire
                        FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
-                       WHERE rappel.id_user = $cookie");
+                       WHERE rappel.id_user = 2");
     // $reponse = $db->query($req);
     // foreach ($reponse as $info) {
     //   $slots=$info['slots'];
 
     foreach($req->fetchAll() as $post) {
-      $list[] = new Rappel($post['id_user'], $post['destinataire'], $post['objet'], $post['date_rappel'], $post['message'], $post['slots']);
+      $list[] = new Rappel($post['id_rappel'], $post['date_rappel'], $post['objet'], $post['email'], $post['id_user'], $post['slots']);
     }
     return $list;
   }

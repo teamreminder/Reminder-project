@@ -10,7 +10,6 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
  {
    if ($_GET['email']==$email && hash('sha512', $_GET['password'])==$password) {
    // $id=$post->id;
-   echo "cookie ok";
    setcookie('utilisateur',$id,time()+6000);
    header("location: ?controller=rappels&action=home");
    }else{
