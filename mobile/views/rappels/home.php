@@ -30,7 +30,7 @@
        </div>
      </div>
      <hr>
-     <?php
+     <?php   
     }
     ?>
    </div>
