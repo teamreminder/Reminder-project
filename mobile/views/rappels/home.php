@@ -1,7 +1,5 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
-
-
  ?>
 <div class="container">
   <div class="row">
@@ -21,7 +19,7 @@
          ?>
      <div class="row">
        <div class="col-8">
-         <p><?php echo $post->destinataire; ?><br>
+         <p><?php echo $post->email; ?><br>
           <?php echo "Objet : ".$post->objet."<br>";
           echo substr($post->date_rappel, 0, -9);
            ?></p>
