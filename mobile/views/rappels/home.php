@@ -1,6 +1,6 @@
 <?php
- if (isset($_COOKIE['utilisateur'])) {
-?>
+  if (isset($_COOKIE['utilisateur'])) {
+ ?>
 <div class="container">
  <div class="row">
    <div class="col-8">
@@ -35,6 +35,32 @@
    ?>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+<div class="container">
+   <div class="list_reminder">
+     <?php
+       foreach ($posts as $post) {
+         ?>
+     <div class="row">
+       <div class="col-8">
+         <p><?php echo $post->email; ?><br>
+          <?php echo "Objet : ".$post->objet."<br>";
+          echo substr($post->date_rappel, 0, -9);
+           ?></p>
+       </div>
+       <div class="col-4 align-self-end">
+         <a href='edit_remind.php'><img src="img/pens.png"=""></a>
+         <a href='#'><img src="img/cross.png"=""></a>
+       </div>
+     </div>
+     <hr>
+     <?php
+    }
+    ?>
+   </div>
+ </div>
+>>>>>>> 30317624ac320397e5295a56980db4fb0c128e6e
 <div class="ad">
  <script>
    (adsbygoogle = window.adsbygoogle || []).push({
