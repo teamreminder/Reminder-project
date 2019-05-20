@@ -45,22 +45,20 @@ class Rappel {
   }
 
   public static function home() {
-    // $list = [];
-    // $db=Db::getInstance();
-    // $cookie=$_COOKIE['utilisateur'];
-    // $req = $db->query("SELECT user.id_user, destinataire, message, nom, prenom, objet, date_rappel, slots
-    //         FROM user,envoyer,rappel
-    //         WHERE user.id_user=$cookie
-    //         AND user.id_user=envoyer.id_user
-    //         AND envoyer.id_rappel=rappel.id_rappel");
-    // // $reponse = $db->query($req);
-    // // foreach ($reponse as $info) {
-    // //   $slots=$info['slots'];
-    //
-    // foreach($req->fetchAll() as $post) {
-    //   $list[] = new Rappel($post['id_user'], $post['destinataire'], $post['objet'], $post['date_rappel'], $post['message'], $post['slots']);
-    // }
-    // return $list;
+    $list = [];
+    $db=Db::getInstance();
+    $cookie=$_COOKIE['utilisateur'];
+    $req = $db->query("SELECT SELECT id_rappel,date_rappel,message, email, rappel.id_user as id_destinataire
+                       FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
+                       WHERE rappel.id_user = $cookie");
+    // $reponse = $db->query($req);
+    // foreach ($reponse as $info) {
+    //   $slots=$info['slots'];
+
+    foreach($req->fetchAll() as $post) {
+      $list[] = new Rappel($post['id_user'], $post['destinataire'], $post['objet'], $post['date_rappel'], $post['message'], $post['slots']);
+    }
+    return $list;
   }
 
   }
