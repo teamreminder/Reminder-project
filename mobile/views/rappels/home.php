@@ -35,8 +35,6 @@
    ?>
   </div>
 </div>
-<<<<<<< HEAD
-=======
 <div class="container">
    <div class="list_reminder">
      <?php
@@ -60,7 +58,6 @@
     ?>
    </div>
  </div>
->>>>>>> 30317624ac320397e5295a56980db4fb0c128e6e
 <div class="ad">
  <script>
    (adsbygoogle = window.adsbygoogle || []).push({
