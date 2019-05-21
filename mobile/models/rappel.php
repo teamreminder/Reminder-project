@@ -15,31 +15,28 @@ class Rappel {
     $this->id_user = $id_user;
     }
 
-  public static function createReminder() {
-    $db=Db::getInstance();
-    $id=$_COOKIE['utilisateur'];
-    $req = $db->query("SELECT id_user, objet, date_rappel, id_rappel, id_user_etre_destinataire FROM `rappel` WHERE id_user=$id");
-      foreach($req->fetchAll() as $post) {
-        $list[] = new User($post['id_user'], $post['objet'], $post['date_rappel'], $post['id_rappel'], $post['id_user_etre_destinataire']);
-        $destinataire=$post['id_user_etre_destinataire'];
-        $req = $db->query("SELECT email FROM `user` WHERE id_user=$destinataire");
-        foreach($req->fetchAll() as $post) {
-          $tableau[] = new User($post['email'], $post['email'], $post['email'], $post['email'], $post['email'], $post['email']);
-        }
-      return $tableau;
-      }
-    return $list;
-  }
-
   public static function createReminderTraitement() {
     $db=Db::getInstance();
-    $destinataire=$_GET['destinataire'];
+    $email=$_GET['destinataire'];
     $datetime=$_GET['datetime'];
     $objet=$_GET['objet'];
     $message=$_GET['message'];
     $cookie=$_COOKIE['utilisateur'];
     $today=date("Y-m-d H:i:s");
-    $req="INSERT INTO `rappel` (`objet`, `date_rappel`, `message`, `date_enregistrement`, `id_user`, `id_user_etre_destinataire`) VALUES ($objet, $datetime, $message, $today, $cookie, '3')";
+    $id_destinataire="";
+
+    $requete1="SELECT id_user,email FROM user WHERE email='$email'";
+    $reponse=$db->query($requete1);
+
+    foreach ($reponse as $info)
+    {
+     $id_destinataire = $info['id_user'];
+     echo $info;
+    }
+
+    $req2="INSERT INTO rappel (objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire)
+    VALUES ( $objet, $datetime, $message, $today, $cookie, $id_destinataire)";
+    $db->query($req2);
   }
 
   public static function home() {
@@ -55,7 +52,7 @@ class Rappel {
     return $list;
   }
 
-  }
+}
 
   // public static function createArdoise($prenom,$montant){
   //   $db = Db::getInstance();

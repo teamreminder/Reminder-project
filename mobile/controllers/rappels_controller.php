@@ -8,7 +8,7 @@ class RappelsController {
 
 
   public function home() {
-    $posts = Rappel::home();  
+    $posts = Rappel::home();
     require_once('views/rappels/home.php');
 }
 
@@ -57,11 +57,11 @@ class RappelsController {
   }
 
   public function createReminder() {
-    $posts = Rappel::createReminder();
     require_once('views/rappels/create_reminder.php');
   }
 
   public function createReminderTraitement() {
+    $posts = Rappel::createReminderTraitement();
     require_once('views/rappels/create_reminder_traitement.php');
   }
 

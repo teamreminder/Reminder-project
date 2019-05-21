@@ -7,8 +7,10 @@
      <a href="?controller=rappels&action=gestionContact">Gestion contact</a><br>
      <a href="?controller=rappels&action=gestionGroup">Gestion groupe</a>
    </div>
-   <div class="col-4 align-self-end">
-     <a href="?controller=rappels&action=createReminder"><img src="img/add_button.png" width="80px" height="80px"alt=""></a>
+   <div class="new_reminder">
+     <div class="col-4 align-self-end">
+       <a href="?controller=rappels&action=createReminder"><img src="img/add_button.png" width="80px" height="80px"alt=""></a>
+     </div>
    </div>
  </div>
 </div>
@@ -16,6 +18,7 @@
   <div class="list_reminder">
     <?php
       foreach ($posts as $post) {
+        // echo print_r($post);
         ?>
     <div class="row">
       <div class="col-8">
@@ -35,13 +38,8 @@
    ?>
    </div>
  </div>
-<div class="ad">
- <script>
-   (adsbygoogle = window.adsbygoogle || []).push({
-     google_ad_client: "ca-pub-9197870261646752",
-     enable_page_level_ads: true
-   });
- </script>
+<div class="new_slot">
+ <a href="#"><img src="img/padlock.png" alt="cadena"><br>Débloquer de nouveaux rappels</a>
 </div>
 <?php
 }else{

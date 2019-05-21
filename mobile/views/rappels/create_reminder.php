@@ -1,13 +1,5 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
-    foreach ($posts as $post) {
-      echo $post->id_user;
-      echo $post->objet;
-      echo $post->date_rappel;
-      echo $post->id_rappel;
-      echo $post->email;
-    }
-    echo var_dump($tableau);
  ?>
       <div class="container">
         <div class="create_remind">
@@ -22,7 +14,7 @@
                 <p>Votre destinataire a refusé le rappel</p>
               </div>
               <label for="inputdestinataire">Date et heure de l'envoie</label>
-              <input type="datetime-local" name="" value="">
+              <input type="datetime-local" name="datetime" value="">
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
                 <input type="objet" name="objet" class="form-control" id="inputPassword4" placeholder="Votre objet...">
