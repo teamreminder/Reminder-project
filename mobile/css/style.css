@@ -132,6 +132,11 @@ form .form-control {
   color: red;
 }
 
+.create_remind .input_datetime {
+  width: 100%;
+  margin: 5px;
+}
+
 .create_remind button, input {
   width: 100%;
   border: 1px solid #DB9000;

@@ -14,7 +14,9 @@
                 <p>Votre destinataire a refusé le rappel</p>
               </div>
               <label for="inputdestinataire">Date et heure de l'envoie</label>
-              <input type="datetime-local" name="datetime" value="">
+              <div class="input_datetime">
+                <input type="datetime-local" name="datetime" value="">
+              </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
                 <input type="objet" name="objet" class="form-control" id="inputPassword4" placeholder="Votre objet...">
