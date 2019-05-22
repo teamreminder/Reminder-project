@@ -17,22 +17,6 @@ class Rappel {
     $this->email = $email;
     }
 
-  public static function createReminder() {
-    $db=Db::getInstance();
-    $id=$_COOKIE['utilisateur'];
-    $req = $db->query("SELECT id_user, objet, date_rappel, id_rappel, id_user_etre_destinataire FROM `rappel` WHERE id_user=$id");
-      foreach($req->fetchAll() as $post) {
-        $list[] = new User($post['id_user'], $post['objet'], $post['date_rappel'], $post['id_rappel'], $post['id_user_etre_destinataire']);
-        $destinataire=$post['id_user_etre_destinataire'];
-        $req = $db->query("SELECT email FROM `user` WHERE id_user=$destinataire");
-        foreach($req->fetchAll() as $post) {
-          $tableau[] = new User($post['email'], $post['email'], $post['email'], $post['email'], $post['email'], $post['email']);
-        }
-      return $tableau;
-      }
-    return $list;
-  }
-
   public static function createReminderTraitement() {
     $db=Db::getInstance();
     $destinataire=$_GET['destinataire'];
@@ -42,6 +26,14 @@ class Rappel {
     $cookie=$_COOKIE['utilisateur'];
     $today=date("Y-m-d H:i:s");
 
+    $requete1="SELECT id_user,email FROM user WHERE email='$email'";
+    $reponse=$db->query($requete1);
+
+    foreach ($reponse as $info)
+    {
+     $id_destinataire = $info['id_user'];
+     echo $info;
+    }
 
     $req="INSERT INTO `rappel` (`objet`, `date_rappel`, `message`, `date_enregistrement`, `id_user`, `id_user_etre_destinataire`) VALUES ($objet, $datetime, $message, $today, $cookie, '3')";
   }
@@ -59,17 +51,6 @@ class Rappel {
 
     foreach($req->fetchAll() as $post) {
       $list[] = new Rappel($post['id_rappel'], $post['date_rappel'], $post['objet'], $post['email'], $post['id_user'], $post['slots']);
-    }
-    return $list;
-  }
-
-  public static function mailing() {
-    $list = [];
-    $db=Db::getInstance();
-    $req = $db->query("SELECT *
-                       FROM rappel");
-    foreach($req->fetchAll() as $post) {
-      $list[] = new Rappel($post['date_rappel'], $post['date_rappel'], $post['date_rappel'], $post['date_rappel'], $post['date_rappel']);
     }
     return $list;
   }
