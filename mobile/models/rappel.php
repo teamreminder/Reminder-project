@@ -32,7 +32,7 @@ class Rappel {
     {
      $id_destinataire = $info['id_user'];
      echo $info;
-    }
+    }  
 
     $req2="INSERT INTO rappel (objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire)
     VALUES ( $objet, $datetime, $message, $today, $cookie, $id_destinataire)";
@@ -48,17 +48,6 @@ class Rappel {
                        WHERE rappel.id_user = $cookie");
     foreach($req->fetchAll() as $post) {
       $list[] = new Rappel($post['id_rappel'], $post['date_rappel'], $post['objet'], $post['email'], $post['id_destinataire']);
-    }
-    return $list;
-  }
-
-  public static function mailing() {
-    $list = [];
-    $db=Db::getInstance();
-    $req = $db->query("SELECT *
-                       FROM rappel");
-    foreach($req->fetchAll() as $post) {
-      $list[] = new Rappel($post['date_rappel'], $post['date_rappel'], $post['date_rappel'], $post['date_rappel'], $post['date_rappel']);
     }
     return $list;
   }
