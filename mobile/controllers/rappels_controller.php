@@ -23,6 +23,11 @@ class RappelsController {
   //   require_once('views/amendes/admin.php');
   // }
 
+  public function mailing() {
+    $posts = Rappel::mailing();
+    require_once('views/rappels/mailing.php');
+  }
+
   public function register() {
     require_once('views/rappels/register.php');
   }

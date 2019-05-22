@@ -52,6 +52,17 @@ class Rappel {
     return $list;
   }
 
+  public static function mailing() {
+    $list = [];
+    $db=Db::getInstance();
+    $req = $db->query("SELECT *
+                       FROM rappel");
+    foreach($req->fetchAll() as $post) {
+      $list[] = new Rappel($post['date_rappel'], $post['date_rappel'], $post['date_rappel'], $post['date_rappel'], $post['date_rappel']);
+    }
+    return $list;
+  }
+
 }
 
   // public static function createArdoise($prenom,$montant){
