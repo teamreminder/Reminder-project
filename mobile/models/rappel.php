@@ -80,7 +80,7 @@ class Rappel {
     foreach($req->fetchAll() as $post) {
       $list[] = new Rappel($post['id_rappel'], $post['date_rappel'], $post['objet'], $post['email'], $post['id_destinataire'], $post['message']);
     }
-    return $list;
+    return $list; 
   }
 
 }

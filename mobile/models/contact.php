@@ -13,7 +13,7 @@ class Contact {
     $this->idUserLiaison = $idUserLiaison;
   }
 
-  public static function gestionContact() {
+  public static function gestionContact() { 
     $list = [];
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];
@@ -73,7 +73,7 @@ class Contact {
   //   }
   //
   // }
- 
+
   public static function updateContact() {
     $list = [];
     $db=Db::getInstance();

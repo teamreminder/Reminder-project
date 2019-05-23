@@ -1,6 +1,6 @@
 <?php
 if (isset($_COOKIE['utilisateur'])) {
- ?>
+ ?> 
 <section>
   <div class="gestion_group">
     <div class="container">
@@ -16,7 +16,7 @@ if (isset($_COOKIE['utilisateur'])) {
     <div class="container">
       <table class="gestion_group">
         <tr>
-          <th>Email</th> 
+          <th>Email</th>
         </tr>
         <?php
         foreach ($posts as $post) {

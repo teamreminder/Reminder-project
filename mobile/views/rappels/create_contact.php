@@ -1,6 +1,5 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
-
  ?>
 <div class="container">
   <h2>Nouveau contact</h2>

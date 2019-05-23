@@ -8,7 +8,7 @@ class User {
   public $password;
   public $nom;
   public $prenom;
-  public $libelle; 
+  public $libelle;
 
   public function __construct($id, $email, $password) {
     $this->id = $id;
@@ -17,7 +17,7 @@ class User {
     }
 
   private function getID()
-  {
+  { 
     return $this->_id;
   }
 
