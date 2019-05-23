@@ -2,8 +2,8 @@
   if (isset($_COOKIE['utilisateur'])) {
  ?>
       <div class="container">
+        <h3>Créer un rappel</h3>
         <div class="create_remind">
-          <h3>Créer un rappel</h3>
           <form action="index.php" method="get">
             <input type="hidden" name="controller" value="rappels">
             <input type="hidden" name="action" value="createReminderTraitement">
