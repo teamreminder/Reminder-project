@@ -85,5 +85,3 @@ class Rappel {
 
 }
 ?>
-$requete="UPDATE expositions set titre='$titre', date_debut='$datedebut', date_fin='$datefin', resume_fr='$resumefr', resume_ang='$resumeang', resume_all='$resumeall', resume_rus='$resumerus', resume_chi='$resumechi' WHERE id_exposition=$id";
-$result=$bdd->query($requete);
