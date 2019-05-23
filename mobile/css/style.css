@@ -117,7 +117,7 @@ form .form-control {
   margin-bottom: 25px;
 }
 
-.create_remind h3 {
+h3 {
   text-align: center;
 }
 
@@ -142,6 +142,23 @@ form .form-control {
   border: 1px solid #DB9000;
   border-radius: 3px;
   height: 40px;
+}
+
+.edit_rappel textarea {
+  width: 100%;
+  border: 1px solid #DB9000;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+.edit_rappel .input_datetime {
+  width: 100%;
+  margin: 5px 5px;
+}
+
+.edit_rappel .input_datetime input {
+  width: 100%;
+  padding: 5px 5px;
 }
 
 footer {

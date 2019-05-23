@@ -18,7 +18,6 @@
   <div class="list_reminder">
     <?php
       foreach ($posts as $post) {
-        // echo print_r($post);
         ?>
     <div class="row">
       <div class="col-8">
@@ -28,7 +27,7 @@
           ?></p>
       </div>
       <div class="col-4 align-self-end">
-        <a href='edit_remind.php'><img src="img/pens.png"=""></a>
+        <a href='?controller=rappels&action=updateReminder&id=<?php echo $post->id_rappel ?>'><img src="img/pens.png"=""></a>
         <a href='#'><img src="img/cross.png"=""></a>
       </div>
     </div>

@@ -84,6 +84,16 @@ class RappelsController {
     require_once('views/rappels/update_contact.php');
   }
 
+  public function updateReminder() {
+    $posts = Rappel::updateReminder();
+    require_once('views/rappels/update_reminder.php');
+  }
+
+  public function updateReminderTraitement() {
+    $posts = Rappel::updateReminderTraitement();
+    require_once('views/rappels/update_reminder_traitement.php');
+  }
+
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }
