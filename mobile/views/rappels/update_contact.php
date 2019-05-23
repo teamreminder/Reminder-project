@@ -5,7 +5,7 @@
 <div class="container">
   <h4>Modifier contact</h4>
   <?php
-  foreach ($posts as $post) {
+  foreach ($posts as $post) { 
     ?>
   <form action="index.php" method="GET">
     <input type="hidden" name="controller" value="rappels">

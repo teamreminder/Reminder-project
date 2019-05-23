@@ -49,7 +49,7 @@ class RappelsController {
   }
     require_once('views/rappels/gestion_contact.php');
   }
-
+ 
   public function createContact() {
     if (isset($_COOKIE['utilisateur'])) {
     require_once('views/rappels/create_contact.php');

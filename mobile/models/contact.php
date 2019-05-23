@@ -73,7 +73,7 @@ class Contact {
   //   }
   //
   // }
-
+ 
   public static function updateContact() {
     $list = [];
     $db=Db::getInstance();
