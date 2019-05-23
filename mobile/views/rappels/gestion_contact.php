@@ -13,26 +13,24 @@ if (isset($_COOKIE['utilisateur'])) {
         </div>
       </div>
     </div>
+    <div class="container">
       <table class="gestion_group">
         <tr>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Groupe</th>
+          <th>Email</th>
         </tr>
         <?php
         foreach ($posts as $post) {
           ?>
           <tr>
-            <td><?php echo $post->nom; ?></td>
-            <td><?php echo $post->prenom; ?></td>
-            <td><?php echo $post->libelle; ?></td>
-            <?php echo "<td><a href=\"?controller=rappels&action=updateContact&id=".$post->id_user."\">";?><img src="img/pens.png"=""></a></td>
+            <td><?php echo $post->email; ?></td>
+            <?php echo "<td><a href=\"?controller=rappels&action=updateContact&id=".$post->idUserLiaison."\">";?><img src="img/pens.png"=""></a></td>
             <td><a href='#'><img src="img/cross.png"=""></a></td>
           </tr>
           <?php
             }
            ?>
       </table>
+      </div>
       <div class="container">
         <div class="bouton_accueil">
           <a href="?controller=rappels&action=home">retour accueil</a>

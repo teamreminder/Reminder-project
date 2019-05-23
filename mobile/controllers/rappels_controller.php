@@ -52,9 +52,8 @@ class RappelsController {
 
   public function createContact() {
     if (isset($_COOKIE['utilisateur'])) {
-    $posts = User::all();
-  }
     require_once('views/rappels/create_contact.php');
+    }
   }
 
   public function gestionGroup() {
@@ -72,7 +71,7 @@ class RappelsController {
 
   public function CreateContactTraitement() {
     if (isset($_COOKIE['utilisateur'])) {
-    $posts = User::CreateContactTraitement();
+    $posts = Contact::CreateContactTraitement();
   }
     require_once('views/rappels/create_contact_traitement.php');
   }
