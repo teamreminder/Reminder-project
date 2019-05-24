@@ -49,7 +49,7 @@ class RappelsController {
   }
     require_once('views/rappels/gestion_contact.php');
   }
- 
+
   public function createContact() {
     if (isset($_COOKIE['utilisateur'])) {
     require_once('views/rappels/create_contact.php');
@@ -81,6 +81,13 @@ class RappelsController {
     $posts = Contact::updateContact();
   }
     require_once('views/rappels/update_contact.php');
+  }
+
+  public function UpdateContactTraitement() {
+    if (isset($_COOKIE['utilisateur'])) {
+    $posts = Contact::updateContactTraitement();
+  }
+    require_once('views/rappels/update_contact_traitement.php');
   }
 
   public function updateReminder() {

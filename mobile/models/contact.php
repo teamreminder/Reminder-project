@@ -13,7 +13,7 @@ class Contact {
     $this->idUserLiaison = $idUserLiaison;
   }
 
-  public static function gestionContact() { 
+  public static function gestionContact() {
     $list = [];
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];
@@ -89,6 +89,19 @@ class Contact {
     return $list;
   }
 
+  public static function updateContactTraitement() {
+    $list = [];
+    $db=Db::getInstance();
+    $id=$_GET['id'];
+    $prenom=$_GET['prenom'];
+    $nom=$_GET['nom'];
+    $email=$_GET['email'];
+
+    $req = "UPDATE user SET prenom='$prenom', nom='$nom', email='$email'
+                       WHERE id_user = '$id' ";
+
+    $db->query($req);
+   }
 }
 
 ?>
