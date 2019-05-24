@@ -10,6 +10,7 @@
       <form action="index.php" method="get">
         <input type="hidden" name="controller" value="rappels">
         <input type="hidden" name="action" value="updateReminderTraitement">
+        <input type="hidden" name="id" value="<?php echo $post->id_rappel; ?>">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputdestinataire">Destinataire</label>
@@ -18,7 +19,7 @@
           </div>
           <div class="input_datetime">
             <label for="inputdestinataire">Date et heure de l'envoie</label>
-            <input type="datetime-local" name="datetime" value="<?php echo $post->date_rappel; ?>">
+            <input type="datetime-local" required name="datetime" value="<?php echo $post->date_rappel; ?>">
           </div>
           <div class="form-group col-md-6">
             <label for="inputobjet">Objet</label>
