@@ -17,7 +17,7 @@ class User {
     }
 
   private function getID()
-  { 
+  {
     return $this->_id;
   }
 

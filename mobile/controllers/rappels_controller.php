@@ -8,7 +8,9 @@ class RappelsController {
 
 
   public function home() {
-    $posts = Rappel::home();
+    if (isset($_COOKIE['utilisateur'])) {
+      $posts = Rappel::home();
+    }
     require_once('views/rappels/home.php');
 }
 
@@ -49,7 +51,7 @@ class RappelsController {
   }
     require_once('views/rappels/gestion_contact.php');
   }
- 
+
   public function createContact() {
     if (isset($_COOKIE['utilisateur'])) {
     require_once('views/rappels/create_contact.php');
