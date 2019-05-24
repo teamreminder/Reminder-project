@@ -10,12 +10,12 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputdestinataire">Destinataire</label>
-                <input type="email" name="destinataire" class="form-control" id="inputEmail4" placeholder="Votre destinataire...">
+                <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Votre destinataire...">
                 <p>Votre destinataire a refusé le rappel</p>
               </div>
               <label for="inputdestinataire">Date et heure de l'envoie</label>
-              <div class="input_datetime">
-                <input type="datetime-local" name="datetime" value="">
+              <div class="datetime">
+                <input type="datetime-local" name="datetime" value="" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
