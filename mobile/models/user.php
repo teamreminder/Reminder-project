@@ -55,7 +55,7 @@ class User {
     $telephone=$_GET['telephone'];
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
-    $req = "INSERT INTO  user(email,password,telephone,nom,prenom) VALUES ('$email','$password','$telephone','$nom', '$prenom')";
+    $req = "INSERT INTO  user(email,password,nom,prenom,blacklist) VALUES ('$email','$password','$nom', '$prenom', 'non')";
     $db->query($req);
     }
 
@@ -78,7 +78,7 @@ class User {
     $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password='$password'");
       foreach($req->fetchAll() as $post) {
         $list[] = new User($post['id_user'], $post['email'], $post['password']);
-      } 
+      }
     return $list;
     }
 

@@ -15,7 +15,7 @@
         <div class="form-group">
           <label for="exampleInputPassword1">Mot de passe</label>
           <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Votre mot de passe...">
-        </div> 
+        </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Confirmer mot de passe</label>
           <input type="password" class="form-control" name="password2" id="exampleInputPassword1" placeholder="Votre mot de passe...">
@@ -28,10 +28,13 @@
           <label for="InputNom">Nom</label>
           <input type="text" class="form-control" name="nom" id="exampleInputNom1" placeholder="Votre nom...">
         </div>
-          <div class="row">
-            <div class="col align-self-end">
-              <button type="submit" class="btn btn-primary">S'INSCRIRE</button>
-            </div>
+        <div class="form-check">
+          <input type="checkbox" name="checkbox" required>
+          <label class="form-check-label" for="exampleCheck1">J'accepte de recevoir des mails via Reminder</label>
+        </div>
+        <div class="row">
+          <div class="col align-self-end">
+            <button type="submit" class="btn btn-primary">S'INSCRIRE</button>
           </div>
         </div>
       </div>
