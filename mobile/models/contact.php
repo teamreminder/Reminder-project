@@ -51,29 +51,46 @@ class Contact {
     $cookie=$_COOKIE['utilisateur'];
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
-    $req = "INSERT INTO  user(email,nom,prenom,password) VALUES ('$email','$nom', '$prenom','$password')";
-    $req2 = "INSERT INTO liaison(id_user,id_user_liaison) VALUES ('$cookie',(SELECT id_user FROM user WHERE email='$email'))";
-    $db->query($req);
-    $db->query($req2);
+
+    $requete="SELECT * FROM user WHERE email='$email'";
+    $result=$db->query($requete);
+    // if( isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300) &&
+    //     isset($_GET['prenom']) && !empty($_GET['prenom']) && (strlen($_GET['prenom']) <=50) &&
+    //     isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50)) {
+    //
+    //         echo "<p>Le contact a bien été créé</p>";
+    //
+    //     }else{
+    //
+    //         echo "<p>Erreur dans le remplissage du formulaire.</p>";
+    //
+    //     }
+    foreach ($result as $value)
+    {
+      $mail=$value['email'];
+    }
+      if (isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300) &&
+          isset($_GET['prenom']) && !empty($_GET['prenom']) && (strlen($_GET['prenom']) <=50) &&
+          isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50))
+          {
+            if (isset($mail)) {
+
+              echo "<div class='container'><p>Utilisateur déja inscrit</p></div>";
+            }else{
+              echo "<div class='container'><p>L'utilisateur a bien été créé !</p></div>";
+              $req = "INSERT INTO  user(email,nom,prenom,password) VALUES ('$email','$nom', '$prenom','$password')";
+              $req2 = "INSERT INTO liaison(id_user,id_user_liaison) VALUES ('$cookie',(SELECT id_user FROM user WHERE email='$email'))";
+              $db->query($req);
+              $db->query($req2);
+
+            }
+
+      }else{
+        echo "<div class='container'><p>Formulaire mal remplie</p></div>";
+      }
+
   }
-
-  // public static function updateContact() {
-  //   $id=$_GET['id'];
-  //   // $prenom=$_GET['prenom'];
-  //   // $nom=$_GET['nom'];
-  //   // $email=$_GET['email'];
-  //   $db=Db::getInstance();
-  //   $req = "SELECT * FROM user WHERE id_user=$id";
-  //   $reponse = $db->query($req);
-  //
-  //   foreach ($reponse as $info) {
-  //     $email=$info['email'];
-  //     $prenom=$info['prenom'];
-  //     $nom=$info['nom'];
-  //   }
-  //
-  // }
-
+// !isset($mail)
   public static function updateContact() {
     $list = [];
     $db=Db::getInstance();
