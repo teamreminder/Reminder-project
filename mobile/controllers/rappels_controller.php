@@ -10,6 +10,7 @@ class RappelsController {
   public function home() {
     if (isset($_COOKIE['utilisateur'])) {
       $posts = Rappel::home();
+      $value = Rappel::slots();
     }
     require_once('views/rappels/home.php');
 }

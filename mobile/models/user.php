@@ -66,7 +66,7 @@ class User {
     $nom=$_GET['nom'];
     $password= hash('sha512', $_GET['password']);
     $telephone=$_GET['telephone'];
-    $req = "UPDATE user SET telephone = '$telephone', nom = '$nom', prenom = '$prenom', password='$password' WHERE user.id_user = '$id'";
+    $req = "UPDATE user SET telephone = '$telephone', nom = '$nom', prenom = '$prenom', password='$password', blacklist='non' WHERE user.id_user = '$id'";
     $db->query($req);
     }
 
@@ -75,7 +75,7 @@ class User {
     $db = Db::getInstance();
     $email=$_GET['email'];
     $password= hash('sha512', $_GET['password']);
-    $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password= '$password'");
+    $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password='$password'");
       foreach($req->fetchAll() as $post) {
         $list[] = new User($post['id_user'], $post['email'], $post['password']);
       }

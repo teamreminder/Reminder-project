@@ -34,6 +34,17 @@
     <hr>
     <?php
    }
+   foreach ($value as $post) {
+     $slots=$post->message;
+     $nb_rappel=$post->nb_rappel;
+     $nb_emplacement_vide=$slots-$nb_rappel;
+   }
+   for ($i=0; $i <$nb_emplacement_vide; $i++) {
+     echo "<div class='emplacement'>";
+     echo "<p><em>emplacement vide</em></p>";
+     echo "<hr>";
+     echo "</div>";
+   }
    ?>
    </div>
  </div>
