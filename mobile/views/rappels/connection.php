@@ -12,13 +12,12 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    header("location: ?controller=rappels&action=home");
    }else{
       echo "erreur d'identification";
-      echo "ertbztrbzt";
    }
 }else {
    echo "formulaire mal rempli !";
    echo "<br><a href='index.php'>retour page de connection</a>";
 
- }   
+ }
 
 
 
