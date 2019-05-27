@@ -8,7 +8,9 @@ class RappelsController {
 
 
   public function home() {
-    $posts = Rappel::home();
+    if (isset($_COOKIE['utilisateur'])) {
+      $posts = Rappel::home();
+    }
     require_once('views/rappels/home.php');
 }
 
@@ -98,6 +100,15 @@ class RappelsController {
   public function updateReminderTraitement() {
     $posts = Rappel::updateReminderTraitement();
     require_once('views/rappels/update_reminder_traitement.php');
+  }
+
+  public function registerByMail() {
+    require_once('views/rappels/register_by_mail.php');
+  }
+
+  public function registerByMailTraitement() {
+    $posts = User::registerByMailTraitement();
+    require_once('views/rappels/register_by_mail_traitement.php');
   }
 
   // public function creerArdoise() {

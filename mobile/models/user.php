@@ -17,7 +17,7 @@ class User {
     }
 
   private function getID()
-  { 
+  {
     return $this->_id;
   }
 
@@ -56,6 +56,17 @@ class User {
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
     $req = "INSERT INTO  user(email,password,telephone,nom,prenom) VALUES ('$email','$password','$telephone','$nom', '$prenom')";
+    $db->query($req);
+    }
+
+  public static function registerByMailTraitement() {
+    $db = Db::getInstance();
+    $id=$_GET['id'];
+    $prenom=$_GET['prenom'];
+    $nom=$_GET['nom'];
+    $password= hash('sha512', $_GET['password']);
+    $telephone=$_GET['telephone'];
+    $req = "UPDATE user SET telephone = '$telephone', nom = '$nom', prenom = '$prenom', password='$password' WHERE user.id_user = '$id'";
     $db->query($req);
     }
 

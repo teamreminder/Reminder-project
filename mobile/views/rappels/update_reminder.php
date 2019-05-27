@@ -16,7 +16,7 @@
             <label for="inputdestinataire">Destinataire</label>
             <input type="email" name="destinataire" class="form-control" id="inputEmail4" value="<?php echo $post->email; ?>">
             <p>Votre destinataire a refusé le rappel</p>
-          </div>
+          </div> 
           <div class="input_datetime">
             <label for="inputdestinataire">Date et heure de l'envoie</label>
             <input type="datetime-local" required name="datetime" value="<?php echo $post->date_rappel; ?>">
