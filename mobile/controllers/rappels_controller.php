@@ -102,6 +102,15 @@ class RappelsController {
     require_once('views/rappels/update_reminder_traitement.php');
   }
 
+  public function registerByMail() {
+    require_once('views/rappels/register_by_mail.php');
+  }
+
+  public function registerByMailTraitement() {
+    $posts = User::registerByMailTraitement();
+    require_once('views/rappels/register_by_mail_traitement.php');
+  }
+
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }

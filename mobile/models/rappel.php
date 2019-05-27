@@ -31,7 +31,7 @@ class Rappel {
 
     $requete = "SELECT user.id_user, id_rappel, email, rappel.id_user as id_destinataire
                 FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
-                WHERE rappel.id_user = 2
+                WHERE rappel.id_user = '$cookie'
                 AND email='$email2'";
     $result=$db->query($requete);
     foreach ($result as $value)
@@ -67,6 +67,42 @@ class Rappel {
           $result=$db->query($requete2);
         }
       }
+
+      $requete3 = "SELECT email, id_user
+                   FROM user
+                   WHERE id_user='$cookie'";
+      $result=$db->query($requete3);
+      foreach ($result as $value)
+      {
+        $expediteur=$value['email'];
+      }
+      $requete4 = "SELECT email
+                   FROM user
+                   WHERE id_user='$cookie'";
+      $result=$db->query($requete4);
+      foreach ($result as $value)
+      {
+        $expediteur=$value['email'];
+      }
+      $objet2="Autorisation Reminder";
+      $header="MIME-Version: 1.0\r\n";
+      $header.='From:"Charlesdelpech1@gmail.com"<Charlesdelpech1@gmail.com>'."\n";
+      $header.='Content-Type:text/html; charset="uft-8"'."\n";
+      $header.='Content-Transfer-Encoding: 8bit';
+
+      $message2="
+      <html>
+        <body>
+          <div align='center'>
+            <h1>Reminder</h1>
+          </div>
+          <p>Bonjour Mme/M.<br><br>Notre utilisateur $expediteur souhaite vous envoyez un mail de rappel grâce à notre application Reminder<br><br>Pour accepter cette invitation, inscrivez-vous! Cela ne prendra qu'un instant</p>
+          <br><br><a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMail&id=$id_user_destinataire'>S'inscrire</a>
+        </body>
+      </html>
+      ";
+
+      mail($email2,$objet2,$message2,$header);
   }
 
   public static function home() {

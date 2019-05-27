@@ -59,6 +59,17 @@ class User {
     $db->query($req);
     }
 
+  public static function registerByMailTraitement() {
+    $db = Db::getInstance();
+    $id=$_GET['id'];
+    $prenom=$_GET['prenom'];
+    $nom=$_GET['nom'];
+    $password= hash('sha512', $_GET['password']);
+    $telephone=$_GET['telephone'];
+    $req = "UPDATE user SET telephone = '$telephone', nom = '$nom', prenom = '$prenom', password='$password' WHERE user.id_user = '$id'";
+    $db->query($req);
+    }
+
   public static function connectionTraitement() {
     $list = [];
     $db = Db::getInstance();
