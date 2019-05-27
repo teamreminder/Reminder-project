@@ -106,7 +106,7 @@ class Rappel {
 
       mail($email2,$objet2,$message2,$header);
   }
-
+ 
   public static function home() {
     $list = [];
     $db=Db::getInstance();

@@ -78,7 +78,7 @@ class User {
     $req = $db->query("SELECT id_user, email, password FROM user WHERE email='$email' AND password='$password'");
       foreach($req->fetchAll() as $post) {
         $list[] = new User($post['id_user'], $post['email'], $post['password']);
-      }
+      } 
     return $list;
     }
 

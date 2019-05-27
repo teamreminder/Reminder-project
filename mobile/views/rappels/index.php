@@ -17,7 +17,7 @@
       </div>
       <div class="row">
         <div class="col align-self-end">
-          <a href="#">Mot de pas oublié</a>
+          <a href="#">Mot de pas oublié</a> 
         </div>
       </div>
       <div class="row">

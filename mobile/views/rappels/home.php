@@ -40,7 +40,7 @@
      $nb_emplacement_vide=$slots-$nb_rappel;
    }
    for ($i=0; $i <$nb_emplacement_vide; $i++) {
-     echo "<div class='emplacement'>";
+     echo "<div class='emplacement'>"; 
      echo "<p><em>emplacement vide</em></p>";
      echo "<hr>";
      echo "</div>";

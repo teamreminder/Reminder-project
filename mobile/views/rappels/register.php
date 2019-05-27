@@ -15,7 +15,7 @@
         <div class="form-group">
           <label for="exampleInputPassword1">Mot de passe</label>
           <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Votre mot de passe...">
-        </div>
+        </div> 
         <div class="form-group">
           <label for="exampleInputPassword1">Confirmer mot de passe</label>
           <input type="password" class="form-control" name="password2" id="exampleInputPassword1" placeholder="Votre mot de passe...">
