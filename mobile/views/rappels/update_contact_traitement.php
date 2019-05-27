@@ -9,4 +9,4 @@ isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50)) {
   echo "Erreur dans le remplissage du formulaire.<br>";
 }
  ?>
-<a href=?controller=rappels&action=gestionContact>retour gestion des contacts</a>
+<a href="?controller=rappels&action=gestionContact">retour gestion des contacts</a>
