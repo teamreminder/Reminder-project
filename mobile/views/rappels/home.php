@@ -23,7 +23,36 @@
       <div class="col-8">
         <p><?php echo $post->email; ?><br>
          <?php echo "Objet : ".$post->objet."<br>";
-         echo substr($post->date_rappel, 0, -9);
+         $anne=substr($post->date_rappel, 0, -15);
+         $mois=substr($post->date_rappel, 5, -12);
+         $jour=substr($post->date_rappel, 8, -9);
+         $heure=substr($post->date_rappel, 11, -3);
+         if ($mois==1) {
+           $mois="janvier";
+         }elseif ($mois==2) {
+           $mois="février";
+         }elseif ($mois==3) {
+           $mois="mars";
+         }elseif ($mois==4) {
+           $mois="avril";
+         }elseif ($mois==5) {
+           $mois="mai";
+         }elseif ($mois==6) {
+           $mois="juin";
+         }elseif ($mois==7) {
+           $mois="juillet";
+         }elseif ($mois==8) {
+           $mois="août";
+         }elseif ($mois==9) {
+           $mois="septembre";
+         }elseif ($mois==10) {
+           $mois="octobre";
+         }elseif ($mois==11) {
+           $mois="novembre";
+         }elseif ($mois==12) {
+           $mois="décembre";
+         }
+         echo "Pour le ".$jour." ".$mois." ".$anne."";
           ?></p>
       </div>
       <div class="col-4 align-self-end">
@@ -39,11 +68,20 @@
      $nb_rappel=$post->nb_rappel;
      $nb_emplacement_vide=$slots-$nb_rappel;
    }
-   for ($i=0; $i <$nb_emplacement_vide; $i++) {
-     echo "<div class='emplacement'>"; 
-     echo "<p><em>emplacement vide</em></p>";
-     echo "<hr>";
-     echo "</div>";
+   if (!isset($slots)) {
+     for ($i=0; $i<5; $i++) {
+       echo "<div class='emplacement'>";
+       echo "<p><em>emplacement vide</em></p>";
+       echo "<hr>";
+       echo "</div>";
+     }
+   }else {
+     for ($i=0; $i <$nb_emplacement_vide; $i++) {
+       echo "<div class='emplacement'>";
+       echo "<p><em>emplacement vide</em></p>";
+       echo "<hr>";
+       echo "</div>";
+     }
    }
    ?>
    </div>

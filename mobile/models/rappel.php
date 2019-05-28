@@ -7,8 +7,6 @@ class Rappel {
   public $id_user;
   public $message;
   public $nb_rappel;
-
-
   public function __construct($id_rappel, $date_rappel, $objet, $email, $id_user, $message, $nb_rappel) {
     $this->id_rappel = $id_rappel;
     $this->date_rappel = $date_rappel;
@@ -18,7 +16,6 @@ class Rappel {
     $this->message = $message;
     $this->nb_rappel = $nb_rappel;
     }
-
   public static function createReminderTraitement() {
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];
@@ -30,7 +27,6 @@ class Rappel {
     $date=substr($datetime, 0, -6);
     $time=substr($datetime, 11, 5);
     $gooddate=$date." ".$time.":00";
-
     $requete = "SELECT user.id_user, id_rappel, email, rappel.id_user as id_destinataire
                 FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
                 WHERE rappel.id_user = '$cookie'
@@ -69,7 +65,6 @@ class Rappel {
           $result=$db->query($requete2);
         }
       }
-
       $requete3 = "SELECT email, id_user
                    FROM user
                    WHERE id_user='$cookie'";
@@ -91,7 +86,6 @@ class Rappel {
       $header.='From:"Charlesdelpech1@gmail.com"<Charlesdelpech1@gmail.com>'."\n";
       $header.='Content-Type:text/html; charset="uft-8"'."\n";
       $header.='Content-Transfer-Encoding: 8bit';
-
       $message2="
       <html>
         <body>
@@ -103,10 +97,9 @@ class Rappel {
         </body>
       </html>
       ";
-
       mail($email2,$objet2,$message2,$header);
   }
- 
+
   public static function home() {
     $list = [];
     $db=Db::getInstance();
@@ -120,7 +113,6 @@ class Rappel {
     }
     return $list;
   }
-
   public static function slots() {
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];
@@ -133,7 +125,6 @@ class Rappel {
     }
     return $list;
   }
-
   public static function updateReminder() {
     $list = [];
     $db=Db::getInstance();
@@ -146,7 +137,6 @@ class Rappel {
     }
     return $list;
   }
-
   public static function updateReminderTraitement() {
     $list = [];
     $db=Db::getInstance();
@@ -199,6 +189,5 @@ class Rappel {
       }
     }
   }
-
 }
 ?>

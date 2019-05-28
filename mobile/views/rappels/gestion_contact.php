@@ -1,12 +1,12 @@
 <?php
 if (isset($_COOKIE['utilisateur'])) {
- ?> 
+ ?>
 <section>
   <div class="gestion_group">
     <div class="container">
       <div class="row">
         <div class="col align-self-start">
-          <h4>Gestion des contacts</h4>
+          <h3>Gestion des contacts</h3>
         </div>
         <div class="col align-self-end">
           <a href="?controller=rappels&action=createContact"><img src="img/add_button.png" width="80px" height="80px" alt=""></a>
