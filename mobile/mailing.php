@@ -3,12 +3,13 @@
 $bdd = new PDO('mysql:host=remindmeuiremind.mysql.db;dbname=remindmeuiremind;charset=utf8', 'remindmeuiremind', 'Isfac2019', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 // $bdd = new PDO('mysql:host=localhost;dbname=reminder', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-$requete = "SELECT id_rappel,date_rappel,message, objet, email, rappel.id_user as id_destinataire
+$requete = "SELECT id_rappel,date_rappel,message, objet, email, rappel.id_user as id_expediteur, blacklist
             FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire";
 $result=$bdd->query($requete);
 $resultat=$result->fetchAll();
 foreach ($resultat as $value)
 {
+  $blacklist=$value['blacklist'];
   $date_rappel=$value['date_rappel'];
   $email=$value['email'];
   $objet=$value['objet'];
@@ -16,7 +17,7 @@ foreach ($resultat as $value)
   echo date('Y-m-d H')."<br>";
   echo substr($date_rappel, 0, -6)."<br>";
 
-  if (date('Y-m-d H')==substr($date_rappel, 0, -6)) {
+  if (date('Y-m-d H')==substr($date_rappel, 0, -6)&&($blacklist=="non")) {
     $header="MIME-Version: 1.0\r\n";
     $header.='From:"Charlesdelpech1@gmail.com"<Charlesdelpech1@gmail.com>'."\n";
     $header.='Content-Type:text/html; charset="uft-8"'."\n";
