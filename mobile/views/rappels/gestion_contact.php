@@ -24,7 +24,7 @@ if (isset($_COOKIE['utilisateur'])) {
           <tr>
             <td><?php echo $post->email; ?></td>
             <?php echo "<td><a href=\"?controller=rappels&action=updateContact&id=".$post->idUserLiaison."\">";?><img src="img/pens.png"=""></a></td>
-            <td><a href='#'><img src="img/cross.png"=""></a></td>
+            <?php echo "<td><a onclick=\"return confirm('Etes vous sûre de vouloir supprimer ce contact ?');\" href=\"?controller=rappels&action=deleteContact&id=".$post->idUserLiaison."\">";?><img src="img/cross.png"=""></a></td>
           </tr>
           <?php
             }

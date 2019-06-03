@@ -11,7 +11,7 @@ class RappelsController {
     if (isset($_COOKIE['utilisateur'])) {
       $posts = Rappel::home();
       $value = Rappel::slots();
-    } 
+    }
     require_once('views/rappels/home.php');
 }
 
@@ -91,6 +91,13 @@ class RappelsController {
     $posts = Contact::updateContactTraitement();
   }
     require_once('views/rappels/update_contact_traitement.php');
+  }
+
+  public function deleteContact() {
+    if (isset($_COOKIE['utilisateur'])) {
+    $posts = Contact::deleteContact();
+  }
+    require_once('views/rappels/delete_contact_traitement.php');
   }
 
   public function updateReminder() {
