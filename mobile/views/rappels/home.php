@@ -26,7 +26,8 @@
          $anne=substr($post->date_rappel, 0, -15);
          $mois=substr($post->date_rappel, 5, -12);
          $jour=substr($post->date_rappel, 8, -9);
-         $heure=substr($post->date_rappel, 11, -3);
+         $heure=substr($post->date_rappel, 11, -6);
+         $minutes=substr($post->date_rappel, 14, -3);
          if ($mois==1) {
            $mois="janvier";
          }elseif ($mois==2) {
@@ -52,12 +53,12 @@
          }elseif ($mois==12) {
            $mois="décembre";
          }
-         echo "Pour le ".$jour." ".$mois." ".$anne."";
+         echo $jour." ".$mois." ".$anne." à ".$heure."h".$minutes;
           ?></p>
       </div>
       <div class="col-4 align-self-end">
         <a href='?controller=rappels&action=updateReminder&id=<?php echo $post->id_rappel ?>'><img src="img/pens.png"=""></a>
-        <a href='#'><img src="img/cross.png"=""></a>
+        <a href='?controller=rappels&action=deleteRappel&id=<?php echo $post->id_rappel ?>' onclick="return confirm('Etes vous sûre de vouloir supprimer ce contact ?')"><img src="img/cross.png"=""></a>
       </div>
     </div>
     <hr>

@@ -237,5 +237,12 @@ class Rappel {
     }
   }
 
+  public static function deleteRappel() {
+    $db=Db::getInstance();
+    $id=$_GET['id'];
+    $requete="DELETE  FROM rappel WHERE id_rappel='$id'";
+    $db->query($requete);
+  }
+
 }
 ?>
