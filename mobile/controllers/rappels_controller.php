@@ -3,6 +3,7 @@ class RappelsController {
   public function index() {
     // we store all the posts in a variable
     $posts = User::all();
+    $posts = User::deconnection();
     require_once('views/rappels/index.php');
   }
 
@@ -11,7 +12,7 @@ class RappelsController {
     if (isset($_COOKIE['utilisateur'])) {
       $posts = Rappel::home();
       $value = Rappel::slots();
-    } 
+    }
     require_once('views/rappels/home.php');
 }
 
@@ -29,6 +30,25 @@ class RappelsController {
   public function mailing() {
     $posts = Rappel::mailing();
     require_once('views/rappels/mailing.php');
+  }
+
+  public function passwordForget() {
+    require_once('views/rappels/password_forget.php');
+  }
+
+  public function passwordForgetTraitement() {
+    $posts = User::passwordForget();
+    require_once('views/rappels/password_forget_traitement.php');
+  }
+
+  public function monCompte() {
+    $posts = User::monCompte();
+    require_once('views/rappels/mon_compte.php');
+  }
+
+  public function monCompteTraitement() {
+    $posts = User::monCompteTraitement();
+    require_once('views/rappels/mon_compte_traitement.php');
   }
 
   public function register() {

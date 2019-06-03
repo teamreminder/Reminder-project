@@ -17,24 +17,59 @@ header {
   background-color: #DB9000;
   display: flex;
   margin-bottom: 10px;
+  position: relative;
 }
 
-header a {
-  margin-left: 10px;
-  line-height: 90px;
+header .align-self-start a {
   text-decoration: none;
-  display: inline;
+  display: inline-block;
 }
 
-header a img {
-  width: 80px;
-  height: 80px;
+header .align-self-start a img {
+  width: 60px;
+  height: 60px;
+  margin-top: -15px;
+  margin-left: 5px;
 }
 
-header h1 {
+header .align-self-start h1 {
   color: white;
   font-size: 2em;
-  line-height: 90px;
+  margin-top: 25px;
+}
+
+header .align-self-end {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+header .dropdown a {
+  text-decoration: none;
+  color: black;
+}
+
+header .dropdown-toggle::after {
+    display: none;
+}
+
+header .btn-secondary {
+  color: #fff;
+  background-color: #DB9000;
+  border: 0px;
+  margin-top: 20px;
+}
+
+header .btn-secondary:hover {
+  color: #fff;
+  background-color: #DB9000;
+  border: 0px;
+}
+
+header .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #DB9000;
+  border: 0px;
 }
 
 section {

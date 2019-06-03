@@ -36,7 +36,6 @@ class User {
     $this->_nom = $nom;
   }
 
-
   public static function all() {
     $list = [];
     $db = Db::getInstance();
@@ -46,6 +45,84 @@ class User {
       $list[] = new User($post['id_user'], $post['email'], $post['password']);
     }
     return $list;
+  }
+
+  public static function deconnection() {
+    setcookie('utilisateur');
+  }
+
+  public static function monCompte() {
+    $list = [];
+    $db = Db::getInstance();
+    $cookie=$_COOKIE['utilisateur'];
+    $req = $db->query("SELECT email, prenom, nom FROM user WHERE id_user='$cookie'");
+    foreach($req->fetchAll() as $post) {
+      $list[] = new User($post['email'], $post['prenom'], $post['nom']);
+    }
+    return $list;
+  }
+
+  public static function monCompteTraitement() {
+    $db = Db::getInstance();
+    $COOKIE=$_COOKIE['utilisateur'];
+    $email=$_GET['email'];
+    $password=hash('sha512',$_GET['password']);
+    $nom=$_GET['nom'];
+    $prenom=$_GET['prenom'];
+    $requete="UPDATE user SET email = '$email', password = '$password', nom = '$nom', prenom = '$prenom' WHERE id_user = '$COOKIE'";
+    $result=$db->query($requete);
+  }
+
+  public static function passwordForget() {
+    echo "<h3>Mot de passe oublié</h3>";
+    $db = Db::getInstance();
+    $mail=$_GET['email'];
+    $req = "SELECT email FROM user WHERE email = '$mail'";
+    $db->query($req);
+    $result=$db->query($req);
+    foreach ($result as $value)
+    {
+      $bddemail=$value['email'];
+    }
+    if ($_GET['email']==$value['email']) {
+      $chars = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
+       "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
+      "N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6",
+      "7","8","9","&","#","@","+","-","*","!","=","$","%",".",",",";");
+      $indexMax = count($chars) - 1;
+      $pwd = "";
+      for($i = 0 ; $i < 10; $i++)
+      {
+        $newpassword .= $chars[rand(0,  $indexMax)];
+      }
+      $hashpassword=hash('sha512',$newpassword);
+      $req2 = "UPDATE user SET password='$hashpassword' WHERE email = '$mail'";
+      $db->query($req2);
+
+      $objet="Mot de passe oublié.";
+      $header="MIME-Version: 1.0\r\n";
+      $header.='From:"Charlesdelpech1@gmail.com"<Charlesdelpech1@gmail.com>'."\n";
+      $header.='Content-Type:text/html; charset="uft-8"'."\n";
+      $header.='Content-Transfer-Encoding: 8bit';
+
+      $message="
+      <html>
+        <body>
+          <div align='center'>
+            <h1>Reminder</h1>
+          </div>
+          <p>Bonjour Mme/M.<br><br>
+          Nous avons reinitialisé votre mot de passe suite à votre demande.<br>
+          Voici votre nouveau mot de passe : $newpassword .
+        </body>
+      </html>
+      ";
+
+      mail($mail,$objet,$message,$header);
+      echo "<div class='container'>Nous venons d'envoyer un mail à $mail avec votre nouveau mot de passe.</div>";
+    }else{
+      echo "<div class='container'>Vous n'avez pas de comptes Reminder.</div>";
+    }
   }
 
   public static function registerTraitement() {
