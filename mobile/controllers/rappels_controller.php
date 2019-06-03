@@ -113,6 +113,13 @@ class RappelsController {
     require_once('views/rappels/update_contact_traitement.php');
   }
 
+  public function deleteContact() {
+    if (isset($_COOKIE['utilisateur'])) {
+    $posts = Contact::deleteContact();
+  }
+    require_once('views/rappels/delete_contact_traitement.php');
+  }
+
   public function updateReminder() {
     $posts = Rappel::updateReminder();
     require_once('views/rappels/update_reminder.php');

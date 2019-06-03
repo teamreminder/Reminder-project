@@ -54,17 +54,6 @@ class Contact {
 
     $requete="SELECT * FROM user WHERE email='$email'";
     $result=$db->query($requete);
-    // if( isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300) &&
-    //     isset($_GET['prenom']) && !empty($_GET['prenom']) && (strlen($_GET['prenom']) <=50) &&
-    //     isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50)) {
-    //
-    //         echo "<p>Le contact a bien été créé</p>";
-    //
-    //     }else{
-    //
-    //         echo "<p>Erreur dans le remplissage du formulaire.</p>";
-    //
-    //     }
     foreach ($result as $value)
     {
       $mail=$value['email'];
@@ -74,8 +63,14 @@ class Contact {
           isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50))
           {
             if (isset($mail)) {
-
-              echo "<div class='container'><p>Utilisateur déja inscrit</p></div>";
+              $requete1 = "SELECT id_user FROM user WHERE email='$email'";
+              $variable=$db->query($requete1);
+              foreach ($variable as $value) {
+                $id_liaison=$value['id_user'];
+              }
+              $requete2 = "INSERT INTO liaison(id_user,id_user_liaison) VALUES ('$cookie','$id_liaison')";
+              $db->query($requete2);
+              echo "<div class='container'><p>Utilisateur a bien été ajouté à vos contacts</p></div>";
             }else{
               echo "<div class='container'><p>L'utilisateur a bien été créé !</p></div>";
               $req = "INSERT INTO  user(email,nom,prenom,password) VALUES ('$email','$nom', '$prenom','$password')";
@@ -118,6 +113,13 @@ class Contact {
                        WHERE id_user = '$id' ";
 
     $db->query($req);
+   }
+
+   public static function deleteContact() {
+     $db=Db::getInstance();
+     $id=$_GET['id'];
+     $requete="DELETE  FROM liaison WHERE id_user_liaison=$id";
+     $db->query($requete);
    }
 }
 
