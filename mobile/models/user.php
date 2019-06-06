@@ -128,12 +128,23 @@ class User {
   public static function registerTraitement() {
     $db = Db::getInstance();
     $email=$_GET['email'];
-    $password= hash('sha512', $_GET['password']);
-    $telephone=$_GET['telephone'];
+    $password=$_GET['password'];
+    $hashpassword= hash('sha512', $password);
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
-    $req = "INSERT INTO  user(email,password,nom,prenom,blacklist) VALUES ('$email','$password','$nom', '$prenom', 'non')";
-    $db->query($req);
+    $req = "SELECT * FROM user WHERE email='$email'";
+    $result=$db->query($req);
+    foreach ($result as $value)
+    {
+      $emailbdd=$value['email'];
+    }
+    if (!isset($emailbdd)) {
+      $req2 = "INSERT INTO  user(email,password,nom,prenom,blacklist) VALUES ('$email','$hashpassword','$nom', '$prenom', 'non')";
+      $db->query($req2);
+    }else {
+      echo "<div class=container>coucou</div>";
+    }
+
     }
 
   public static function registerByMailTraitement() {

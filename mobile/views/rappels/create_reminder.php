@@ -4,7 +4,7 @@
       <div class="container">
         <h3>Créer un rappel</h3>
         <div class="create_remind">
-          <form action="index.php" method="get">
+          <form action="index.php" method="get"> 
             <input type="hidden" name="controller" value="rappels">
             <input type="hidden" name="action" value="createReminderTraitement">
             <div class="form-row">
@@ -15,7 +15,7 @@
               </div>
               <label for="inputdestinataire">Date et heure de l'envoie</label>
               <div class="input_datetime">
-                <input type="datetime-local" name="datetime" value="" required>
+                <input type="datetime-local" name="datetime" value="2019-06-01T12:00" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
