@@ -29,6 +29,7 @@
         </div>
       </div>
     </div>
+    <a href="?controller=rappels&action=home">retour accueil</a>
   </div>
   </form>
   <?php
