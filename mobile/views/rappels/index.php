@@ -2,7 +2,6 @@
   <h2>SE CONNECTER</h2>
   <div class="inscription">
     <a href="?controller=rappels&action=register">S'inscrire</a>
-    <a href="?controller=admin&action=indexAdministrateur">Accès back office</a>
   </div>
   <div class="connexion">
     <form action="index.php" method="get">
@@ -20,12 +19,13 @@
         <div class="col align-self-end">
           <a href="?controller=rappels&action=passwordForget">Mot de passe oublié</a>
         </div>
-      </div>
+      </div> 
       <div class="row">
         <div class="col align-self-end">
           <button type="submit" class="btn btn-primary">SE CONNECTER</button>
         </div>
-      </div> 
+      </div>
     </form>
+    <a href="?controller=admin&action=indexAdministrateur">Accès back office</a>
   </div>
 </div>
