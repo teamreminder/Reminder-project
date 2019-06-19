@@ -154,6 +154,13 @@ class User {
     $db->query($req);
     }
 
+    public static function refuseByMailTraitement() {
+      $db = Db::getInstance();
+      $id=$_GET['id'];
+      $req = "UPDATE user SET blacklist='oui' WHERE user.id_user = '$id'";
+      $db->query($req);
+      }
+
   public static function connectionTraitement() {
     $list = [];
     $db = Db::getInstance();

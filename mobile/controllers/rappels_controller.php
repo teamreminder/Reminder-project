@@ -135,6 +135,11 @@ class RappelsController {
     require_once('views/rappels/accept_by_mail.php');
   }
 
+  public function refuseByMailTraitement() {
+    $posts = User::refuseByMailTraitement();
+    require_once('views/rappels/refuse_by_mail.php');
+  }
+
   // public function creerArdoise() {
   //   require_once('views/amendes/creer_ardoise.php');
   // }
