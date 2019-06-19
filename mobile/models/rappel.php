@@ -126,6 +126,7 @@ class Rappel {
                border-radius: 3px;
                color: #DB9000;
                text-decoration: none;
+               margin: 25px;
               }
             </style>
           </body>
