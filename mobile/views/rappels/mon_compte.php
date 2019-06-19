@@ -13,7 +13,11 @@
       </div>
       <div class="form-group">
         <label for="InputNom">Votre nouveau mot de passe</label>
-        <input type="text" class="form-control" name="password" id="exampleInputNom1" placeholder="Votre mot de passe..." required>
+        <input type="text" class="form-control" name="password" id="exampleInputPassword1" placeholder="Votre mot de passe..." required>
+      </div>
+      <div class="form-group">
+        <label for="InputNom">Confirmer nouveau mot de passe</label>
+        <input type="text" class="form-control" name="password2" id="exampleInputPassword2" placeholder="Votre mot de passe..." required>
       </div>
       <div class="form-group">
         <label for="InputPrenom">Prénom</label>

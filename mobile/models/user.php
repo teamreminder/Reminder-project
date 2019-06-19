@@ -66,11 +66,20 @@ class User {
     $db = Db::getInstance();
     $COOKIE=$_COOKIE['utilisateur'];
     $email=$_GET['email'];
-    $password=hash('sha512',$_GET['password']);
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
-    $requete="UPDATE user SET email = '$email', password = '$password', nom = '$nom', prenom = '$prenom' WHERE id_user = '$COOKIE'";
-    $result=$db->query($requete);
+    if ($_GET['password']==$_GET['password2']) {
+      $password=hash('sha512',$_GET['password']);
+      $requete="UPDATE user SET email = '$email', password = '$password', nom = '$nom', prenom = '$prenom' WHERE id_user = '$COOKIE'";
+      $result=$db->query($requete);
+      echo "<div class=container><h3>Mon compte</h3>";
+      echo "<p>Mot de passe modifié</p>";
+      echo "<a href=?controller=rappels&action=home>retour accueil</a></div>";
+    }else {
+      echo "<div class=container><h3>Mon compte</h3>";
+      echo "<p>Erreur dans le mot de passe</p>";
+      echo "<a href=?controller=rappels&action=home>retour accueil</a></div>";
+    }
   }
 
   public static function passwordForget() {

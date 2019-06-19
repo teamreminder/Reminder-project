@@ -5,7 +5,11 @@
     <h3>Editer un rappel</h3>
     <div class="edit_rappel">
       <?php
+
         foreach ($posts as $post) {
+          $date1=substr($post->date_rappel, 0, -9);
+          $date2=substr($post->date_rappel, 11, -3);
+          $date=$date1."T".$date2.":00";
       ?>
       <form action="index.php" method="get">
         <input type="hidden" name="controller" value="rappels">
@@ -16,10 +20,10 @@
             <label for="inputdestinataire">Destinataire</label>
             <input type="email" name="destinataire" class="form-control" id="inputEmail4" value="<?php echo $post->email; ?>">
             <p>Votre destinataire a refusé le rappel</p>
-          </div> 
+          </div>
           <div class="input_datetime">
             <label for="inputdestinataire">Date et heure de l'envoie</label>
-            <input type="datetime-local" required name="datetime" value="<?php echo $post->date_rappel; ?>">
+            <input type="datetime-local" required name="datetime" value="<?php echo $date; ?>">
           </div>
           <div class="form-group col-md-6">
             <label for="inputobjet">Objet</label>
@@ -31,7 +35,7 @@
           <textarea name="message" rows="8" cols="50" placeholder="<?php echo $post->message; ?>"></textarea>
         </div>
         <div class="col align-self-end">
-          <button type="submit" class="btn btn-primary">CRÉER</button>
+          <button type="submit" class="btn btn-primary">MODIFIER</button>
         </div>
       </form>
       <?php
