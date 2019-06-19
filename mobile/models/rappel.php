@@ -119,7 +119,14 @@ class Rappel {
             <p>Bonjour Mme/M.<br><br>Notre utilisateur $expediteur souhaite vous envoyez un mail de rappel grâce à notre application Reminder<br><br>Pour accepter cette invitation, inscrivez-vous! Cela ne prendra qu'un instant</p>
             <br><br><a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMail&id=$id_user_destinataire'>S'inscrire</a>
             <style>
-
+            a {
+               border: 1px solid #DB9000;
+               padding: 10px;
+               border-radius: 3px;
+               color: #DB9000;
+               text-decoration: none;
+               margin: 25px;
+              }
             </style>
           </body>
         </html>
