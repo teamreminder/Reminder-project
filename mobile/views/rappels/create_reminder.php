@@ -1,6 +1,7 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
     $today=date('c');
+    substr($today, 0, -9);
  ?>
 
       <div class="container">
@@ -18,7 +19,7 @@
               </div>
               <label for="inputdestinataire">Date et heure de l'envoie</label>
               <div class="input_datetime">
-                <input type="datetime-local" name="datetime" value=<?php echo $today; ?> required>
+                <input type="datetime-local" name="datetime" value="<?php echo substr($today, 0, -9); ?>" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
