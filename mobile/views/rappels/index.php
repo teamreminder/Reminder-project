@@ -18,7 +18,7 @@
       </div>
       <div class="row">
         <div class="col align-self-end">
-          <a href="?controller=rappels&action=passwordForget">Mot de pas oublié</a>
+          <a href="?controller=rappels&action=passwordForget">Mot de passe oublié</a>
         </div>
       </div>
       <div class="row">

@@ -16,7 +16,7 @@
                 <div id="exo5">
                 </div>
               </div>
-              <label for="inputdestinataire">Date et heure de l'envoie</label>
+              <label for="inputdestinataire">Date et heure de l'envoi</label>
               <div class="input_datetime">
                 <input type="datetime-local" name="datetime" value="<?php echo substr($today, 0, -9); ?>" required>
               </div>
