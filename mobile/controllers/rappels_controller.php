@@ -145,19 +145,6 @@ class RappelsController {
     require_once('views/rappels/refuse_by_mail.php');
   }
 
-  // public function creerArdoise() {
-  //   require_once('views/amendes/creer_ardoise.php');
-  // }
-  //
-  // public function update() {
-  //   require_once('views/amendes/update.php');
-  // }
-  //
-  // public function updateTraitement() {
-  //   // we store all the posts in a variable
-  //   $posts = Amende::updateArdoise($_GET['montant'],$_GET['id']);
-  //   require_once('views/amendes/update_traitement.php');
-  // }
 
 
 }

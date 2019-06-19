@@ -183,16 +183,7 @@ class User {
       }
     }
 
-      // public static function find($id) {
-      //   $db = Db::getInstance();
-      //   // we make sure $id is an integer
-      //   $id = intval($id);
-      //   $req = $db->prepare("SELECT * FROM user WHERE id_user = :id");
-      //   // the query was prepared, now we replace :id with our actual $id value
-      //   $req->execute(array('id_user' => $id));
-      //   $post = $req->fetch();
-      //   return new User($post['id_user'], $post['email'], $post['password']);
-      // }
+    
 
 }
 
