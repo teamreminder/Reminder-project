@@ -5,7 +5,7 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    if ($_GET['email']==$post->email && hash('sha512', $_GET['password'])==$post->password) {
      $id=$post->id;
 
-   setcookie('utilisateur',$id,time()+6000);
+   setcookie('admin',$id,time()+6000);
    header("location: ?controller=admin&action=homeBackOffice");
    }else{
       echo "erreur d'identification";
