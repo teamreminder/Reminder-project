@@ -19,7 +19,7 @@
         <div class="col align-self-end">
           <a href="?controller=rappels&action=passwordForget">Mot de passe oublié</a>
         </div>
-      </div>
+      </div> 
       <div class="row">
         <div class="col align-self-end">
           <button type="submit" class="btn btn-primary">SE CONNECTER</button>
