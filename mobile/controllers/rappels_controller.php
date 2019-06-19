@@ -16,17 +16,6 @@ class RappelsController {
     require_once('views/rappels/home.php');
 }
 
-  // public function create() {
-  //   // we store all the posts in a variable
-  //   $posts = Amende::createArdoise($_GET['prenom'],$_GET['montant']);
-  //   require_once('views/amendes/creer_ardoise_traitement.php');
-  // }
-  //
-  // public function admin() {
-  //   $posts = Amende::all();
-  //   require_once('views/amendes/admin.php');
-  // }
-
   public function mailing() {
     $posts = Rappel::mailing();
     require_once('views/rappels/mailing.php');
@@ -84,7 +73,11 @@ class RappelsController {
   }
 
   public function createReminder() {
+    if (isset($_COOKIE['utilisateur'])) {
+    $posts = Rappel::blacklist();
+  }
     require_once('views/rappels/create_reminder.php');
+
   }
 
   public function createReminderTraitement() {
