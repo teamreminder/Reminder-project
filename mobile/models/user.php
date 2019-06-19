@@ -142,10 +142,10 @@ class User {
       $req2 = "INSERT INTO  user(email,password,nom,prenom,blacklist) VALUES ('$email','$hashpassword','$nom', '$prenom', 'non')";
       $db->query($req2);
     }else {
-      echo "<div class=container>coucou</div>";
+      echo "Adresse mail déjà existante.<a href=?controller=rappels&action=home>Retour</a>";
     }
 
-    }
+  }
 
   public static function registerByMailTraitement() {
     $db = Db::getInstance();
