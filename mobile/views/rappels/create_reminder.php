@@ -1,6 +1,8 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
+    $today=date('c');
  ?>
+
       <div class="container">
         <h3>Créer un rappel</h3>
         <div class="create_remind">
@@ -16,7 +18,7 @@
               </div>
               <label for="inputdestinataire">Date et heure de l'envoie</label>
               <div class="input_datetime">
-                <input type="datetime-local" name="datetime" value="2019-06-01T12:00" required>
+                <input type="datetime-local" name="datetime" value=<?php echo $today; ?> required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputobjet">Objet</label>
