@@ -1,7 +1,6 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
     $today=date('c');
-    substr($today, 0, -9);
  ?>
 
       <div class="container">
