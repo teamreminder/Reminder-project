@@ -15,7 +15,7 @@
  </div>
 </div>
 <div class="container">
-  <div class="list_reminder">
+  <div class="list_reminder"> 
     <?php
       foreach ($posts as $post) {
         ?>

@@ -19,6 +19,6 @@
           <button type="submit" class="btn btn-primary">SE CONNECTER</button>
         </div>
       </div>
-    </form>
+    </form> 
   </div>
 </div>

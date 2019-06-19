@@ -25,7 +25,7 @@
         <div class="col align-self-end">
           <button type="submit" class="btn btn-primary">SE CONNECTER</button>
         </div>
-      </div>
+      </div> 
     </form>
   </div>
 </div>

@@ -6,7 +6,7 @@ class RappelsController {
     $posts = User::deconnection();
     require_once('views/rappels/index.php');
   }
-
+ 
 
   public function home() {
     if (isset($_COOKIE['utilisateur'])) {

@@ -7,7 +7,7 @@
       ['suscribe',     11],
       ['un-suscribe',      2],
     ]);
-
+ 
     var options = {
       title: 'Part of people who accept mail to reminder',
       pieHole: 0.4,

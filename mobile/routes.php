@@ -16,7 +16,7 @@ function call($controller, $action) {
     break;
     case 'admin':
     require_once('models/admin.php');
-    $controller = new AdminController();
+    $controller = new AdminController(); 
   }
   $controller->{ $action }();
 }

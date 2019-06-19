@@ -7,7 +7,7 @@ class Admin {
   public $email;
   public $password;
   public $nom;
-  public $prenom;
+  public $prenom; 
   public $slots;
   public $statut;
 

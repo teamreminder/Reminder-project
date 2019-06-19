@@ -18,7 +18,7 @@ class Rappel {
     $this->message = $message;
     $this->nb_rappel = $nb_rappel;
     }
-
+ 
   public static function createReminderTraitement() {
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];

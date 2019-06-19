@@ -1,6 +1,6 @@
 <?php
 class AdminController {
-
+ 
   public function indexAdministrateur(){
     require_once('views/rappels/index_admin.php');
   }
