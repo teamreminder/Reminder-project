@@ -55,7 +55,7 @@
       }
     };
     var dansIunput = document.getElementById("filtre").value
-    var url="?controller=rappel&action=createReminder&filtre="+dansIunput
+    var url="?controller=rappels&action=blacklist&filtre="+dansIunput
     xhttp.open("GET", url, true);
     xhttp.send();
     }

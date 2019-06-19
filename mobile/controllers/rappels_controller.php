@@ -73,10 +73,15 @@ class RappelsController {
   }
 
   public function createReminder() {
+
+    require_once('views/rappels/create_reminder.php');
+
+  }
+
+  public function blacklist() {
     if (isset($_COOKIE['utilisateur'])) {
     $posts = Rappel::blacklist();
   }
-    require_once('views/rappels/create_reminder.php');
 
   }
 
