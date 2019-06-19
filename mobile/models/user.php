@@ -109,7 +109,7 @@ class User {
       <html>
         <body>
           <div align='center'>
-            <h1>Reminder</h1> 
+            <h1>Reminder</h1>
           </div>
           <p>Bonjour Mme/M.<br><br>
           Nous avons reinitialisé votre mot de passe suite à votre demande.<br>
@@ -150,13 +150,16 @@ class User {
   public static function registerByMailTraitement() {
     $db = Db::getInstance();
     $id=$_GET['id'];
-    $prenom=$_GET['prenom'];
-    $nom=$_GET['nom'];
-    $password= hash('sha512', $_GET['password']);
-    $telephone=$_GET['telephone'];
-    $req = "UPDATE user SET telephone = '$telephone', nom = '$nom', prenom = '$prenom', password='$password', blacklist='non' WHERE user.id_user = '$id'";
+    $req = "UPDATE user SET blacklist='non' WHERE user.id_user = '$id'";
     $db->query($req);
     }
+
+    public static function refuseByMailTraitement() {
+      $db = Db::getInstance();
+      $id=$_GET['id'];
+      $req = "UPDATE user SET blacklist='oui' WHERE user.id_user = '$id'";
+      $db->query($req);
+      }
 
   public static function connectionTraitement() {
     $list = [];

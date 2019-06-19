@@ -130,13 +130,14 @@ class RappelsController {
     require_once('views/rappels/update_reminder_traitement.php');
   }
 
-  public function registerByMail() {
-    require_once('views/rappels/register_by_mail.php');
-  }
-
   public function registerByMailTraitement() {
     $posts = User::registerByMailTraitement();
-    require_once('views/rappels/register_by_mail_traitement.php');
+    require_once('views/rappels/accept_by_mail.php');
+  }
+
+  public function refuseByMailTraitement() {
+    $posts = User::refuseByMailTraitement();
+    require_once('views/rappels/refuse_by_mail.php');
   }
 
   // public function creerArdoise() {
