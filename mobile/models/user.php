@@ -109,7 +109,7 @@ class User {
       <html>
         <body>
           <div align='center'>
-            <h1>Reminder</h1>
+            <h1>Reminder</h1> 
           </div>
           <p>Bonjour Mme/M.<br><br>
           Nous avons reinitialisé votre mot de passe suite à votre demande.<br>
