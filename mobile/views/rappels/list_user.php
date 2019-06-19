@@ -1,6 +1,7 @@
 <div class="container">
   <div class="titre">
     <h3>Liste des utilisateurs</h3>
+    <a href="?controller=admin&action=homeBackOffice">retour à l'accueil</a>
   </div>
   <table class="list_user">
     <tr>
