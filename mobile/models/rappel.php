@@ -244,5 +244,33 @@ class Rappel {
     $db->query($requete);
   }
 
+  public static function blacklist() {
+    $db=Db::getInstance();
+    $filtre=$_GET['filtre'];
+    $st=$db->query("SELECT DISTINCT email, blacklist FROM user WHERE email='$filtre'");
+    $tableau = [];
+    foreach ($st as $info) {
+     $tableau[]=$info['blacklist'];
+
+    }
+    if(empty($info['blacklist'])) {
+      $a[]="<p style='color: orange'>pas encore souscrit</p>";
+      echo json_encode($a);
+    }else {
+
+      if ($info['blacklist']=="pas encore") {
+        $a[]="<p style='color: orange'>pas encore souscrit</p>";
+        echo json_encode($a);
+      }else if ($info['blacklist']=="non"){
+        $a[]="<p style='color: green'>il a souscrit</p>";
+        echo json_encode($a);
+      }else {
+        $a[]="<p style='color: red'>il a refusé</p>";
+        echo json_encode($a);
+      }
+
+    }
+  }
+
 }
 ?>
