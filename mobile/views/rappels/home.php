@@ -1,6 +1,6 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
- ?>
+ ?> 
 <div class="container">
  <div class="row">
    <div class="col-8">
@@ -11,7 +11,7 @@
      <div class="col-4 align-self-end">
        <a href="?controller=rappels&action=createReminder"><img src="img/add_button.png" width="80px" height="80px"alt=""></a>
      </div>
-   </div> 
+   </div>
  </div>
 </div>
 <div class="container">

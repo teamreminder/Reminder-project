@@ -17,9 +17,9 @@ function call($controller, $action) {
     case 'admin':
     require_once('models/admin.php');
     $controller = new AdminController();
-  } 
+  }
   $controller->{ $action }();
-}
+} 
 // we're adding an entry for the new controller and its actions
 $controllers = array('pages' => ['error'],
                    'rappels' => ['index', 'register', 'registerTraitement', 'connection', 'home', 'gestionContact','createContact','CreateContactTraitement','createReminder','blacklist', 'createReminderTraitement', 'gestionGroup', 'updateContact', 'mailing', 'updateReminder', 'updateReminderTraitement','UpdateContactTraitement', 'registerByMailTraitement','refuseByMailTraitement','deleteContact','passwordForget','passwordForgetTraitement','monCompte','monCompteTraitement','deleteRappel'],

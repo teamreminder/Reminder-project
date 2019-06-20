@@ -2,7 +2,7 @@
   if (isset($_COOKIE['utilisateur'])) {
     $today=date('c');
  ?>
- 
+  
       <div class="container">
         <h3>Créer un rappel</h3>
         <div class="create_remind">

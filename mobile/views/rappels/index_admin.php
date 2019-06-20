@@ -18,7 +18,7 @@ if (isset($_COOKIE['utilisateur'])) {
       <div class="form-group">
         <label for="exampleInputPassword1">Password *</label>
         <input type="password" class="form-control"  name="password" id="exampleInputPassword1" placeholder="Votre password...">
-      </div>
+      </div> 
       <div class="row">
         <div class="col align-self-end">
           <button type="submit" class="btn btn-primary">SE CONNECTER</button>
@@ -28,7 +28,7 @@ if (isset($_COOKIE['utilisateur'])) {
   </div>
   <a href="?controller=rappels&action=createReminder">Retour</a>
 </div>
-<?php 
+<?php
 }else{
  ?>
  <div class="container">

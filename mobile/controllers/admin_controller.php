@@ -1,9 +1,9 @@
 <?php
 class AdminController {
- 
+
   public function indexAdministrateur(){
     require_once('views/rappels/index_admin.php');
-  }
+  } 
 
   public function homeBackOffice(){
     $posts = Admin::all();

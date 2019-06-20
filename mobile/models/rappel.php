@@ -118,7 +118,7 @@ class Rappel {
             </div>
             <p>Bonjour Mme/M.<br><br>Notre utilisateur $expediteur souhaite vous envoyez un mail de rappel grâce à notre application Reminder<br><br>Pour accepter cette invitation, inscrivez-vous! Cela ne prendra qu'un instant</p>
             <br><br><a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMailTraitement&id=$id_user_destinataire'>J'accepte</a>
-            <a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMailTraitement&id=$id_user_destinataire'>Je refuse</a>
+            <a href='http://remind-me.fr/index.php?controller=rappels&action=refuseByMailTraitement&id=$id_user_destinataire'>Je refuse</a>
             <style>
             a {
                border: 1px solid #DB9000;

@@ -15,7 +15,7 @@
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control"  name="password" id="exampleInputPassword1" placeholder="Votre password...">
-      </div> 
+      </div>  
       <div class="row">
         <div class="col align-self-end">
           <a href="?controller=rappels&action=passwordForget">Mot de passe oublié</a>

@@ -1,7 +1,7 @@
 html {
   height: 100%;
 }
-
+ 
 body {
   min-height: 100%;
   margin: 0;
@@ -64,7 +64,7 @@ header .btn-secondary:hover {
   color: #fff;
   background-color: #DB9000;
   border: 0px;
-} 
+}
 
 header .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
   color: #fff;
