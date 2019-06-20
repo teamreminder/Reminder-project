@@ -17,6 +17,6 @@ $nom=$_GET['nom'];
     <p>session expirée ! veuillez vous reconnecter !</p>
     <a href="?controller=rappels&action=index">retour connection</a>
   </div>
-  <?php
+  <?php 
 }
  ?>

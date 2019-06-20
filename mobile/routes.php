@@ -23,7 +23,8 @@ function call($controller, $action) {
 // we're adding an entry for the new controller and its actions
 $controllers = array('pages' => ['error'],
                    'rappels' => ['index', 'register', 'registerTraitement', 'connection', 'home', 'gestionContact','createContact','CreateContactTraitement','createReminder','blacklist', 'createReminderTraitement', 'gestionGroup', 'updateContact', 'mailing', 'updateReminder', 'updateReminderTraitement','UpdateContactTraitement', 'registerByMailTraitement','refuseByMailTraitement','deleteContact','passwordForget','passwordForgetTraitement','monCompte','monCompteTraitement','deleteRappel'],
-                    'admin' => ['indexAdministrateur','connection', 'homeBackOffice', 'listUser','listLogs']);
+                    'admin' => ['indexAdministrateur','connection','authentification_by_mail', 'homeBackOffice', 'listUser', 'listLogs']);
+                    
 if (array_key_exists($controller, $controllers)) {
   if (in_array($action, $controllers[$controller])) {
   call($controller, $action);

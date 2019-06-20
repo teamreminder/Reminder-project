@@ -1,6 +1,7 @@
 <div class="container">
   <h2>SE CONNECTER</h2>
   <div class="inscription">
+    <a href="?controller=admin&action=indexAdministrateur">Accès back office</a>
     <a href="?controller=rappels&action=register">S'inscrire</a>
   </div>
   <div class="connexion">
@@ -14,18 +15,17 @@
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control"  name="password" id="exampleInputPassword1" placeholder="Votre password...">
-      </div>
+      </div>  
       <div class="row">
         <div class="col align-self-end">
           <a href="?controller=rappels&action=passwordForget">Mot de passe oublié</a>
         </div>
-      </div> 
+      </div>
       <div class="row">
         <div class="col align-self-end">
           <button type="submit" class="btn btn-primary">SE CONNECTER</button>
         </div>
       </div>
     </form>
-    <a href="?controller=admin&action=indexAdministrateur">Accès back office</a>
   </div>
 </div>

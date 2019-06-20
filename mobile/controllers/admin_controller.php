@@ -20,10 +20,17 @@ class AdminController {
     require_once('views/rappels/list_user.php');
   }
 
+
   public function listLogs(){
     require_once('views/rappels/list_logs.php');
   }
 
+
+
+  public function authentification_by_mail() {
+    $posts = Admin::authentification_by_mail();
+    require_once('views/rappels/authentification_by_mail.php');
+  }
 
 
 }

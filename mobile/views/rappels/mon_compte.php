@@ -2,7 +2,7 @@
   <h3>Mon compte</h3>
   <?php
     foreach ($posts as $post) {
-  ?>
+  ?>  
   <form action="index.php" method="GET">
     <input type="hidden" name="controller" value="rappels">
     <input type="hidden" name="action" value="monCompteTraitement">

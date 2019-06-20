@@ -106,7 +106,7 @@ class Rappel {
 
         $objet2="Autorisation Reminder";
         $header="MIME-Version: 1.0\r\n";
-        $header.='From:"Charlesdelpech1@gmail.com"<Charlesdelpech1@gmail.com>'."\n";
+        $header.='From:"reminder.application.pro@gmail.com"<reminder.application.pro@gmail.com>'."\n";
         $header.='Content-Type:text/html; charset="uft-8"'."\n";
         $header.='Content-Transfer-Encoding: 8bit';
 
@@ -118,7 +118,7 @@ class Rappel {
             </div>
             <p>Bonjour Mme/M.<br><br>Notre utilisateur $expediteur souhaite vous envoyez un mail de rappel grâce à notre application Reminder<br><br>Pour accepter cette invitation, inscrivez-vous! Cela ne prendra qu'un instant</p>
             <br><br><a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMailTraitement&id=$id_user_destinataire'>J'accepte</a>
-            <a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMailTraitement&id=$id_user_destinataire'>Je refuse</a>
+            <a href='http://remind-me.fr/index.php?controller=rappels&action=refuseByMailTraitement&id=$id_user_destinataire'>Je refuse</a>
             <style>
             a {
                border: 1px solid #DB9000;
@@ -137,7 +137,6 @@ class Rappel {
         ?>
         <div class="container">
           <h3>Votre rappel a bien été ajouté!</h3>
-          <a href='?controller=rappels&action=home'>retour à l'accueil</a>
         </div>
         <?php
       }
@@ -145,7 +144,6 @@ class Rappel {
       ?>
       <div class="container">
         <h3>Veuillez débloquer de nouveaux emplacements...</h3>
-        <a href='?controller=rappels&action=home'>retour à l'accueil</a>
       </div>
       <?php
     }

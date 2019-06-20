@@ -15,5 +15,5 @@ if ((isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) 
    echo "formulaire mal rempli !";
    echo "<br><a href='index.php'>retour page de connection</a>";
  }
-}
+} 
 ?>
