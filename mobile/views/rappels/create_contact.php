@@ -5,7 +5,7 @@
   <h2>Nouveau contact</h2>
   <div class="inscription">
     <a href="?controller=rappels&action=gestionContact">retour gestion des contacts</a>
-  </div>
+  </div> 
   <div class="connexion">
     <form action="index.php" method="GET">
       <input type="hidden" name="controller" value="rappels">

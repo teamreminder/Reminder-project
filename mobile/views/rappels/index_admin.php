@@ -28,7 +28,7 @@ if (isset($_COOKIE['utilisateur'])) {
   </div>
   <a href="?controller=rappels&action=createReminder">Retour</a>
 </div>
-<?php
+<?php 
 }else{
  ?>
  <div class="container">

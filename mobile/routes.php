@@ -17,7 +17,7 @@ function call($controller, $action) {
     case 'admin':
     require_once('models/admin.php');
     $controller = new AdminController();
-  }
+  } 
   $controller->{ $action }();
 }
 // we're adding an entry for the new controller and its actions

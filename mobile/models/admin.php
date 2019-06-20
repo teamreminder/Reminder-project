@@ -89,7 +89,7 @@ class Admin {
             <p>Bonjour Mme/M.$nom $prenom<br><br>Votre code d'accès est :<br><br>$pwd</p>
           </body>
         </html>
-        ";
+        "; 
 
         mail($email2,$objet2,$message,$header);
         ?>

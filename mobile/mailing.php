@@ -23,7 +23,7 @@ foreach ($resultat as $value)
     $header.='Content-Type:text/html; charset="uft-8"'."\n";
     $header.='Content-Transfer-Encoding: 8bit';
 
-    $message='
+    $message=' 
     <html>
       <body>
         <div align="center">
