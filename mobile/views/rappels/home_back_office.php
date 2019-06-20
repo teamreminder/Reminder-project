@@ -35,3 +35,4 @@
   </div>
   <a href="?controller=admin&action=listUser">Liste des utilisateurs</a>
 </div>
+  <?php require_once('./script.php') ?>
