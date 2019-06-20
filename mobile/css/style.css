@@ -1,7 +1,7 @@
 html {
   height: 100%;
 }
- 
+
 body {
   min-height: 100%;
   margin: 0;
@@ -258,6 +258,7 @@ footer a {
 
 table {
   width: 100%;
+  margin-top: 30px;
 }
 
 table.gestion_group , .gestion_group th , .gestion_group td {
@@ -303,4 +304,19 @@ form {
 
 .graph {
   margin-top: 50px;
+}
+
+.listLogs {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.Logs {
+  margin-top: 30px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.page {
+  margin-top: 30px;
 }

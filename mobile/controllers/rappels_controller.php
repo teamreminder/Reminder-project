@@ -69,6 +69,7 @@ class RappelsController {
   }
 
   public function gestionGroup() {
+    // $posts = Contact::gestionGroupe();
     require_once('views/rappels/gestion_group.php');
   }
 
