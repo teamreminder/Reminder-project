@@ -18,18 +18,7 @@
         <th>Libellé</th>
         <th>Nombre de membres</th>
       </tr>
-        <?php
-        for ($i = 1; $i <= 3; $i++) {
-            ?>
-                  <tr>
-                    <td>Isfac</td>
-                    <td>9</td>
-                    <td><a href='editer_groupe'><img src="img/pens.png"=""></a></td>
-                    <td><a href='#'><img src="img/cross.png"=""></a></td>
-                  </tr>
-            <?php
-            }
-        ?>
+
     </table>
     <div class="container">
       <div class="bouton_accueil">

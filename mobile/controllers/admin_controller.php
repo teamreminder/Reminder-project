@@ -20,6 +20,7 @@ class AdminController {
   }
 
   public function listLogs(){
+    $post = Admin::listLogs();
     require_once('views/rappels/list_logs.php');
   }
 

@@ -28,6 +28,22 @@ class Contact {
     return $list;
   }
 
+  // public static function gestionGroupe() {
+  //   $list = [];
+  //   $db=Db::getInstance();
+  //   $cookie=$_COOKIE['utilisateur'];
+  //   $req = $db->query("SELECT libelle, count(contient.id_user) as id_user, contient.id_groupe as id_groupe
+  //                      FROM contient
+  //                      INNER JOIN user ON user.id_user = contient.id_user
+  //                      WHERE contient.id_user = '$cookie'");
+  //
+  //   foreach($req->fetchAll() as $post) {
+  //     $list[] = new Contact($post['id_user'], $post['libelle'], $post['id_groupe']);
+  //   }
+  //   return $list;
+  // }
+
+
   public static function createContactTraitement() {
     function pwdGen()
     {
