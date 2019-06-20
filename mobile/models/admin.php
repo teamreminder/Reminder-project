@@ -7,7 +7,7 @@ class Admin {
   public $email;
   public $password;
   public $nom;
-  public $prenom; 
+  public $prenom;
   public $slots;
   public $statut;
 
@@ -45,8 +45,17 @@ class Admin {
 
     }
 
-    public function homeBackOffice(){
+    public static function log(){
+      $list = [];
+      $db = Db::getInstance();
+      $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, date_enregistrement, slots, statut
+                          FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
+                          ORDER BY date_enregistrement DESC limit 3');
 
+      foreach($req->fetchAll() as $post) {
+        $list[] = new Admin($post['id_rappel'], $post['emailDestinataire'], $post['date_rappel'], $post['id_expediteur'], $post['date_enregistrement'], $post['slots'], $post['statut']);
+      }
+      return $list;
     }
 
 }

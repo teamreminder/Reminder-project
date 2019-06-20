@@ -1,12 +1,12 @@
 <?php
 class AdminController {
- 
+
   public function indexAdministrateur(){
     require_once('views/rappels/index_admin.php');
   }
 
   public function homeBackOffice(){
-    $posts = Admin::all();
+    $post = Admin::log();
     require_once('views/rappels/home_back_office.php');
   }
 
@@ -20,7 +20,9 @@ class AdminController {
     require_once('views/rappels/list_user.php');
   }
 
-
+  public function listLogs(){
+    require_once('views/rappels/list_logs.php');
+  }
 
 
 
