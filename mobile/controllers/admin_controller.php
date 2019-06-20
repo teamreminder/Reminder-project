@@ -1,6 +1,6 @@
 <?php
 class AdminController {
- 
+
   public function indexAdministrateur(){
     require_once('views/rappels/index_admin.php');
   }
@@ -20,9 +20,10 @@ class AdminController {
     require_once('views/rappels/list_user.php');
   }
 
-
-
-
+  public function authentification_by_mail() {
+    $posts = Admin::authentification_by_mail();
+    require_once('views/rappels/authentification_by_mail.php');
+  }
 
 }
 ?>

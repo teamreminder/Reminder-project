@@ -4,7 +4,7 @@ if (isset($_COOKIE['utilisateur'])) {
 
 ?>
 <div class="container">
-  <a href='?controller=rappels&action=home'>retour à l'accueil</a>
+  <a href='?controller=rappels&action=index_admin'>retour à l'accueil</a>
 </div>
 <?php
 

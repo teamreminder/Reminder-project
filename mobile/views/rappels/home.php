@@ -15,7 +15,7 @@
  </div>
 </div>
 <div class="container">
-  <div class="list_reminder"> 
+  <div class="list_reminder">
     <?php
       foreach ($posts as $post) {
         ?>
@@ -28,30 +28,43 @@
          $jour=substr($post->date_rappel, 8, -9);
          $heure=substr($post->date_rappel, 11, -6);
          $minutes=substr($post->date_rappel, 14, -3);
-         if ($mois==1) {
-           $mois="janvier";
-         }elseif ($mois==2) {
-           $mois="février";
-         }elseif ($mois==3) {
-           $mois="mars";
-         }elseif ($mois==4) {
-           $mois="avril";
-         }elseif ($mois==5) {
-           $mois="mai";
-         }elseif ($mois==6) {
-           $mois="juin";
-         }elseif ($mois==7) {
-           $mois="juillet";
-         }elseif ($mois==8) {
-           $mois="août";
-         }elseif ($mois==9) {
-           $mois="septembre";
-         }elseif ($mois==10) {
-           $mois="octobre";
-         }elseif ($mois==11) {
-           $mois="novembre";
-         }elseif ($mois==12) {
-           $mois="décembre";
+         switch ($mois) {
+           case $mois==1:
+             $mois="janvier";
+             break;
+           case $mois==2:
+             $mois="février";
+             break;
+           case $mois==3:
+             $mois="mars";
+             break;
+           case $mois==4:
+             $mois="avril";
+             break;
+           case $mois==5:
+             $mois="mai";
+             break;
+           case $mois==6:
+             $mois="juin";
+             break;
+           case $mois==7:
+             $mois="juillet";
+             break;
+           case $mois==8:
+             $mois="août";
+             break;
+           case $mois==9:
+             $mois="septembre";
+             break;
+           case $mois==10:
+             $mois="octobre";
+             break;
+           case $mois==11:
+             $mois="novembre";
+             break;
+           case $mois==12:
+             $mois="décembre";
+             break;
          }
          echo $jour." ".$mois." ".$anne." à ".$heure."h".$minutes;
           ?></p>

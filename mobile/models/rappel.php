@@ -18,7 +18,7 @@ class Rappel {
     $this->message = $message;
     $this->nb_rappel = $nb_rappel;
     }
- 
+
   public static function createReminderTraitement() {
     $db=Db::getInstance();
     $cookie=$_COOKIE['utilisateur'];
@@ -137,7 +137,6 @@ class Rappel {
         ?>
         <div class="container">
           <h3>Votre rappel a bien été ajouté!</h3>
-          <a href='?controller=rappels&action=home'>retour à l'accueil</a>
         </div>
         <?php
       }
@@ -145,7 +144,6 @@ class Rappel {
       ?>
       <div class="container">
         <h3>Veuillez débloquer de nouveaux emplacements...</h3>
-        <a href='?controller=rappels&action=home'>retour à l'accueil</a>
       </div>
       <?php
     }
