@@ -29,7 +29,7 @@
 
  ?>
  <tr>
-   <td><?php echo "Un rappel a été envoyé à ".$posts->email." le ".$jourEnregistrement." ".$moisEnregistrement." ".$anneeEnregistrement." pour le ".$jourRappel." ".$moisRappel." ".$anneeRappel." à ".$heureRappel." h ".$minuteRappel."<br>"?></td>
+   <td><?php echo "Un rappel a été envoyé à ".$posts->email." le ".$jourEnregistrement." ".$moisEnregistrement." ".$anneeEnregistrement." pour le ".$jourRappel." ".$moisRappel." ".$anneeRappel." à ".$heureRappel." h ".$minuteRappel.".<br>"?></td>
  </tr>
 <?php } ?>
   </div>
