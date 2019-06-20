@@ -32,38 +32,25 @@ class Admin {
     return $list;
   }
 
-  public static function connectionTraitement() {
+  public static function log(){
     $list = [];
     $db = Db::getInstance();
-    $email=$_GET['email'];
-    $password= hash('sha512', $_GET['password']);
-    $req = $db->query("SELECT * FROM user WHERE email='$email' AND password= '$password'");
+    $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, date_enregistrement, slots, statut
+                        FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
+                        ORDER BY date_enregistrement DESC limit 3');
+
     foreach($req->fetchAll() as $post) {
-      $list[] = new Admin($post['id_user'], $post['email'], $post['password'], $post['nom'], $post['prenom'], $post['slots'], $post['statut']);
+      $list[] = new Admin($post['id_rappel'], $post['emailDestinataire'], $post['date_rappel'], $post['id_expediteur'], $post['date_enregistrement'], $post['slots'], $post['statut']);
     }
     return $list;
-
-    }
-
-    public static function log(){
-      $list = [];
-      $db = Db::getInstance();
-      $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, date_enregistrement, slots, statut
-                          FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
-                          ORDER BY date_enregistrement DESC limit 3');
-
-      foreach($req->fetchAll() as $post) {
-        $list[] = new Admin($post['id_rappel'], $post['emailDestinataire'], $post['date_rappel'], $post['id_expediteur'], $post['date_enregistrement'], $post['slots'], $post['statut']);
-      }
-      return $list;
-    }
+  }
 
     public static function authentification_by_mail() {
       $list = [];
       $db = Db::getInstance();
       $email=$_GET['email'];
       $password= hash('sha512', $_GET['password']);
-      $req = "SELECT email, password, prenom, nom FROM user WHERE email='$email' AND password= '$password'";
+      $req = "SELECT email, password, prenom, nom, statut FROM user WHERE email='$email' AND password= '$password'";
       $req=$db->query($req);
       foreach ($req as $value)
       {
@@ -71,8 +58,9 @@ class Admin {
         $password2=$value['password'];
         $prenom=$value['prenom'];
         $nom=$value['nom'];
+        $statut=$value['statut'];
       }
-      if (isset($email2) && isset($password2)) {
+      if (isset($email2) && isset($password2) && $statut=="admin") {
         $chars = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
          "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
         "N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6",

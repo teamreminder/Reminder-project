@@ -21,5 +21,5 @@
       </div>
     </form>
   </div>
-  <a href="?controller=rappels&action=createReminder">Retour</a>
+  <a href="?controller=rappels&action=index">Retour</a>
 </div>

@@ -11,7 +11,6 @@ class AdminController {
   }
 
   public function connect_back_office_traitement() {
-    $posts = Admin::connectionTraitement();
     require_once('views/rappels/connect_back_office_traitement.php');
   }
 
@@ -20,12 +19,9 @@ class AdminController {
     require_once('views/rappels/list_user.php');
   }
 
-
   public function listLogs(){
     require_once('views/rappels/list_logs.php');
   }
-
-
 
   public function authentification_by_mail() {
     $posts = Admin::authentification_by_mail();
