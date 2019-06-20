@@ -6,17 +6,29 @@ $prenom=$_GET['prenom'];
 $nom=$_GET['nom'];
 
 if( isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300) &&
-isset($_GET['password']) && !empty($_GET['password']) && (strlen($_GET['password']) <= 300) &&
-isset($_GET['prenom']) && !empty($_GET['prenom']) && (strlen($_GET['prenom']) <=50) &&
-isset($_GET['nom']) && !empty($_GET['nom']) && (strlen($_GET['nom']) <=50)) {
+isset($_GET['password']) && !empty($_GET['password']) && (strlen($_GET['password']) <= 300)) {
 
   if (isset($_GET['checkbox'])) {
-    echo "Votre inscription a été faite.";
+    ?>
+    <div class="container">
+      <p>Votre inscription a été faite.</p>
+    </div>
+    <?php
   }else {
-    echo "Veuillez accepter les mails...";
+    ?>
+    <div class="container">
+      <p>Veuillez accepter les mails...</p>
+    </div>
+    <?php
   }
 }else{
-  echo "Erreur dans le remplissage du formulaire.<br>";
+  ?>
+  <div class="container">
+    <p>Erreur dans le remplissage du formulaire.</p>
+  </div>
+  <?php
 }
  ?>
-<a href='index.php'>retour page se connecter</a>
+ <div class="container">
+   <a href='index.php'>retour page se connecter</a>
+ </div>

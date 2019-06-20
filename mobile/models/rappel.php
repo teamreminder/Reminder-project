@@ -66,6 +66,7 @@ class Rappel {
           $id_user_destinataire=$value['id_user'];
           $requete2="INSERT INTO rappel (objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire) VALUES ('$objet', '$gooddate', '$message', '$today', '$cookie', '$id_user_destinataire')";
           $result2=$db->query($requete2);
+          echo "<h3>Votre rappel a bien été enregistré</h3>";
         }else{
           $chars = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
            "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
@@ -90,6 +91,11 @@ class Rappel {
             $requete5="INSERT INTO rappel (id_rappel, objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire) VALUES (NULL, '$objet', '$gooddate', '$message', '$today', '$cookie', '$id_user_destinataire')";
             $result5=$db->query($requete5);
           }
+          ?>
+          <div class="container">
+            <h3>Votre rappel a bien été ajouté!</h3>
+          </div>
+          <?php
         }
 
         $requete6 = "SELECT email, id_user
@@ -99,6 +105,15 @@ class Rappel {
         foreach ($result6 as $value)
         {
           $expediteur=$value['email'];
+        }
+
+        $requete7 = "SELECT blacklist
+                     FROM user
+                     WHERE email='$email2'";
+        $result7=$db->query($requete7);
+        foreach ($result7 as $value)
+        {
+          $blacklist=$value['blacklist'];
         }
 
         if ($blacklist=="pas encore") {
@@ -133,11 +148,6 @@ class Rappel {
         ";
 
         mail($email2,$objet2,$message2,$header);
-        ?>
-        <div class="container">
-          <h3>Votre rappel a bien été ajouté!</h3>
-        </div>
-        <?php
       }
     }else {
       ?>
