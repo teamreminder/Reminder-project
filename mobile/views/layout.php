@@ -1,3 +1,4 @@
+<?php setcookie('utilisateur',NULL, -1) ?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -21,7 +22,7 @@
         </div>
       </div>
       <?php
-        if (!empty($_COOKIE['utilisateur'])) {
+        if (isset($_COOKIE['utilisateur'])) {
       ?>
       <div class="col align-self-end">
         <div class="dropdown">

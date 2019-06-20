@@ -11,7 +11,7 @@ class User {
   public $libelle;
 
   public function __construct($id, $email, $password) {
-    $this->id = $id; 
+    $this->id = $id;
     $this->email = $email;
     $this->password = $password;
     }
@@ -45,10 +45,6 @@ class User {
       $list[] = new User($post['id_user'], $post['email'], $post['password']);
     }
     return $list;
-  }
-
-  public static function deconnection() {
-    setcookie('utilisateur');
   }
 
   public static function monCompte() {
