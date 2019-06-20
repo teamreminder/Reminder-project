@@ -3,7 +3,7 @@
 class Admin {
   // we define 3 attributes
   // they are public so that we can access them using $post->prenom directly
-  public $id; 
+  public $id;
   public $email;
   public $password;
   public $nom;
@@ -83,7 +83,7 @@ class Admin {
         {
           $pwd .= $chars[rand(0,  $indexMax)];
         }
-        $objet2="Reminder code d'accès"
+        $objet2="Reminder code d'accès";
         $header="MIME-Version: 1.0\r\n";
         $header.='From:"reminder.application.pro@gmail.com"<reminder.application.pro@gmail.com>'."\n";
         $header.='Content-Type:text/html; charset="uft-8"'."\n";
@@ -107,7 +107,7 @@ class Admin {
           <p>Nous vous avons envoyé un mail avec un code pour confirmer votre identité, veuillez inscrire le code d'accès</p>
           <form action="index.php" method="get">
             <input type="hidden" name="controller" value="admin">
-            <input type="hidden" name="action" value="?????????">
+            <input type="hidden" name="action" value="connect_back_office_traitement">
             <input type="hidden" name="trueAcces" value="<?php echo $pwd; ?>">
             <div class="form-group">
               <label for="CodeAcces">Code d'accès</label>
