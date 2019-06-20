@@ -1,6 +1,6 @@
 <div class="container">
   <div class="graph">
-  <div class="row">
+    <div class="row">
       <div class="col-lg-4">
         <div id="donutchart" style="width: 100%; height: 200px;"></div>
       </div>

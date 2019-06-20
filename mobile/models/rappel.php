@@ -54,8 +54,7 @@ class Rappel {
 
     $requete1 = "SELECT user.id_user, id_rappel, email, rappel.id_user as id_destinataire
                FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
-               WHERE rappel.id_user = '$cookie'
-               AND email='$email2'";
+               WHERE email='$email2'";
    $result1=$db->query($requete1);
    foreach ($result1 as $value)
    {

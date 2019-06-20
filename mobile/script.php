@@ -1,3 +1,16 @@
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=reminder;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$today=date('Y-m-d H:i:s');
+$requete1 = "SELECT DISTINCT COUNT(id_rappel) AS nbr_rappel,id_user AS utilisateur FROM rappel GROUP BY id_user WHERE date_rappel>'$today'";
+$result1=$bdd->query($requete1);
+$resultat1=$result1->fetchAll();
+foreach ($resultat1 as $value)
+{
+  $nbr_rappel=$value['nbr_rappel'];
+  $utilisateurs=$value['utilisateur'];
+?>
+
+<script type="text/javascript">
 
   google.charts.load("current", {packages:["corechart"]});
   google.charts.setOnLoadCallback(drawChart);
@@ -7,9 +20,9 @@
       ['suscribe',     11],
       ['un-suscribe',      2],
     ]);
- 
+
     var options = {
-      title: 'Part of people who accept mail to reminder',
+      title: 'Répartition des utilisateurs par nombre de rappel',
       pieHole: 0.4,
     };
 
@@ -62,3 +75,5 @@
 
     chart.draw(data, google.charts.Bar.convertOptions(options));
   }
+
+</script>
