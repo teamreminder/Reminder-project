@@ -10,7 +10,7 @@ class AdminController {
     require_once('views/rappels/home_back_office.php');
   }
 
-  public function connection() {
+  public function connect_back_office_traitement() {
     $posts = Admin::connectionTraitement();
     require_once('views/rappels/connect_back_office_traitement.php');
   }

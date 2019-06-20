@@ -107,7 +107,7 @@ class Admin {
           <p>Nous vous avons envoyé un mail avec un code pour confirmer votre identité, veuillez inscrire le code d'accès</p>
           <form action="index.php" method="get">
             <input type="hidden" name="controller" value="admin">
-            <input type="hidden" name="action" value="?????????">
+            <input type="hidden" name="action" value="connect_back_office_traitement">
             <input type="hidden" name="trueAcces" value="<?php echo $pwd; ?>">
             <div class="form-group">
               <label for="CodeAcces">Code d'accès</label>
