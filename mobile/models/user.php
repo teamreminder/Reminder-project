@@ -106,7 +106,7 @@ class User {
 
       $objet="Mot de passe oublié.";
       $header="MIME-Version: 1.0\r\n";
-      $header.='From:"Charlesdelpech1@gmail.com"<Charlesdelpech1@gmail.com>'."\n";
+      $header.='From:"reminder.application.pro@gmail.com"<reminder.application.pro@gmail.com>'."\n";
       $header.='Content-Type:text/html; charset="uft-8"'."\n";
       $header.='Content-Transfer-Encoding: 8bit';
 
@@ -118,7 +118,7 @@ class User {
           </div>
           <p>Bonjour Mme/M.<br><br>
           Nous avons reinitialisé votre mot de passe suite à votre demande.<br>
-          Voici votre nouveau mot de passe : $newpassword .
+          Voici votre nouveau mot de passe : <br>$newpassword .
         </body>
       </html>
       ";
