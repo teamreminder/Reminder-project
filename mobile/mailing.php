@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $bdd = new PDO('mysql:host=remindmeuiremind.mysql.db;dbname=remindmeuiremind;charset=utf8', 'remindmeuiremind', 'Isfac2019', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 // $bdd = new PDO('mysql:host=localhost;dbname=reminder', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -9,6 +9,7 @@ $result=$bdd->query($requete);
 $resultat=$result->fetchAll();
 foreach ($resultat as $value)
 {
+  $idRappel=$value['id_rappel'];
   $blacklist=$value['blacklist'];
   $date_rappel=$value['date_rappel'];
   $email=$value['email'];
@@ -34,7 +35,15 @@ foreach ($resultat as $value)
     </html>
     ';
 
-    mail($email,$objet,$message,$header);
+    if(mail($email,$objet,$message,$header)){
+      $requete2 = "UPDATE rappel set etat='envoyé' WHERE id_rappel=$idRappel";
+      $result2=$bdd->query($requete2);
+      $resultat2=$result2->fetchAll();
+    }else{
+      $requete3 = "UPDATE rappel set etat='echec' WHERE id_rappel=$idRappel";
+      $result3=$bdd->query($requete3);
+      $resultat3=$result3->fetchAll();
+    }
   }
 }
  ?>
