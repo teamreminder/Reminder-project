@@ -2,7 +2,7 @@
   if (isset($_COOKIE['utilisateur'])) {
     $today=date('c');
  ?>
-  
+
       <div class="container">
         <h3>Créer un rappel</h3>
         <div class="create_remind">
@@ -10,20 +10,16 @@
             <input type="hidden" name="controller" value="rappels">
             <input type="hidden" name="action" value="createReminderTraitement">
             <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputdestinataire">Destinataire</label>
-                <input type="email" name="email" class="form-control" id="filtre" placeholder="Votre destinataire...">
-                <div id="exo5">
-                </div>
+              <label for="inputdestinataire">Destinataire</label>
+              <input type="email" name="email" class="form-control" id="filtre" placeholder="Votre destinataire...">
+              <div id="exo5">
               </div>
               <label for="inputdestinataire">Date et heure de l'envoi</label>
               <div class="input_datetime">
                 <input type="datetime-local" name="datetime" value="<?php echo substr($today, 0, -9); ?>" required>
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputobjet">Objet</label>
-                <input type="objet" name="objet" class="form-control" id="inputPassword4" placeholder="Votre objet...">
-              </div>
+              <label for="inputobjet">Objet</label>
+              <input type="objet" name="objet" class="form-control" id="inputPassword4" placeholder="Votre objet...">
             </div>
             <div class="form-group">
               <label for="inputcontent">Message</label>

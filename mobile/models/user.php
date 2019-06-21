@@ -118,7 +118,7 @@ class User {
           </div>
           <p>Bonjour Mme/M.<br><br>
           Nous avons reinitialisé votre mot de passe suite à votre demande.<br>
-          Voici votre nouveau mot de passe : $newpassword .
+          Voici votre nouveau mot de passe : <br>$newpassword .
         </body>
       </html>
       ";
