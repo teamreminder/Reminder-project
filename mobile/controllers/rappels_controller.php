@@ -4,6 +4,7 @@ class RappelsController {
   public function index() {
     // we store all the posts in a variable
     $posts = User::all();
+    $posts = User::deconnection();
     require_once('views/rappels/index.php');
   }
 

@@ -1,4 +1,3 @@
-<?php setcookie('utilisateur',NULL, -1) ?>
 <!doctype html>
 <html lang="fr">
   <head>

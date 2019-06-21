@@ -188,6 +188,10 @@ class User {
       }
     }
 
+    public static function deconnection(){
+      setcookie('utilisateur');
+    }
+
 
 
 }
