@@ -41,5 +41,5 @@ foreach ($resultat as $value)
       $resultat2=$result2->fetchAll();
     }
   }
-}
+
  ?>

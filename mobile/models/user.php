@@ -137,6 +137,7 @@ class User {
     $hashpassword= hash('sha512', $password);
     $nom=$_GET['nom'];
     $prenom=$_GET['prenom'];
+    $today = date('Y-m-d H:i:s');
     $req = "SELECT * FROM user WHERE email='$email'";
     $result=$db->query($req);
     foreach ($result as $value)
@@ -144,7 +145,7 @@ class User {
       $emailbdd=$value['email'];
     }
     if (!isset($emailbdd)) {
-      $req2 = "INSERT INTO  user(email,password,nom,prenom,blacklist) VALUES ('$email','$hashpassword','$nom', '$prenom', 'non')";
+      $req2 = "INSERT INTO  user(email,password,nom,prenom,blacklist,date_enregistrement) VALUES ('$email','$hashpassword','$nom', '$prenom', 'non','$today')";
       $db->query($req2);
     }else {
       echo "Adresse mail déjà existante.<a href=?controller=rappels&action=home>Retour</a>";

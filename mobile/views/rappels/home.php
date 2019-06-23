@@ -1,6 +1,6 @@
 <?php
   if (isset($_COOKIE['utilisateur'])) {
- ?> 
+ ?>
 <div class="container">
  <div class="row">
    <div class="col-8">
@@ -70,7 +70,7 @@
           ?></p>
       </div>
       <div class="col-4 align-self-end">
-        <a href='?controller=rappels&action=updateReminder&id=<?php echo $post->id_rappel ?>'><img src="img/pens.png"=""></a>
+        <a href='?controller=rappels&action=updateReminder&id=<?php echo $post->id_rappel ?>'><img src="img/pens.png"></a>
         <a href='?controller=rappels&action=deleteRappel&id=<?php echo $post->id_rappel ?>' onclick="return confirm('Etes vous sûre de vouloir supprimer ce contact ?')"><img src="img/cross.png"=""></a>
       </div>
     </div>
