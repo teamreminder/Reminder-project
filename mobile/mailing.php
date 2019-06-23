@@ -36,13 +36,9 @@ foreach ($resultat as $value)
     ';
 
     if(mail($email,$objet,$message,$header)){
-      $requete2 = "UPDATE rappel set etat='envoyé' WHERE id_rappel=$idRappel";
+      $requete2 = "UPDATE rappel set etat='envoyé' WHERE id_rappel=$id";
       $result2=$bdd->query($requete2);
       $resultat2=$result2->fetchAll();
-    }else{
-      $requete3 = "UPDATE rappel set etat='echec' WHERE id_rappel=$idRappel";
-      $result3=$bdd->query($requete3);
-      $resultat3=$result3->fetchAll();
     }
   }
 }
