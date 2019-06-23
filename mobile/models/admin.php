@@ -35,7 +35,7 @@ class Admin {
   public static function log(){
     $list = [];
     $db = Db::getInstance();
-    $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, date_enregistrement, slots, statut
+    $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, rappel.date_enregistrement, slots, statut
                         FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
                         ORDER BY date_enregistrement DESC limit 3');
 

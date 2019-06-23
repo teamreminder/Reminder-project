@@ -1,36 +1,36 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=reminder;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-$today=date('Y-m-d H:i:s');
-$requete1 = "SELECT DISTINCT COUNT(id_rappel) AS nbr_rappel,id_user AS utilisateur FROM rappel WHERE date_rappel>'$today' GROUP BY id_user";
-$result1=$bdd->query($requete1);
-$resultat1=$result1->fetchAll();
-foreach ($resultat1 as $value)
-{
-  $nbr_rappel=$value['nbr_rappel'];
-  $utilisateurs=$value['utilisateur'];
-}
+
+$connect =mysqli_connect("remindmeuiremind.mysql.db", "remindmeuiremind", "Isfac2019", "remindmeuiremind");
+
+$query = "SELECT email, slots
+FROM user";
+$result = mysqli_query($connect, $query);
 
 ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 
-  google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Task', 'part of suscribe'],
-      ['suscribe',     11],
-      ['un-suscribe',      2],
-    ]);
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['utilisateurs', 'slots'],
+    <?php
+      while ($row = mysqli_fetch_array($result))
+      {
+        echo "['".$row["email"]."', ".$row["slots"]."],";
+      }
+    ?>
+  ]);
 
-    var options = {
-      title: 'Répartition des utilisateurs par nombre de rappel',
-      pieHole: 0.4,
-    };
+  var options = {
+    title: 'Nombre de slots par utilisateurs',
+  };
 
-    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-    chart.draw(data, options);
-  }
+  var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+
   google.charts.setOnLoadCallback(drawChart2);
   function drawChart2() {
     var data = google.visualization.arrayToDataTable([

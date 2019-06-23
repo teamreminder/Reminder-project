@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
           <label for="inputcontent">Message</label>
-          <textarea name="message" rows="8" cols="50" placeholder="<?php echo $post->message; ?>"></textarea>
+          <textarea name="message" rows="8" cols="50"><?php echo $post->message; ?></textarea>
         </div>
         <div class="col align-self-end">
           <button type="submit" class="btn btn-primary">MODIFIER</button>
@@ -42,12 +42,15 @@
         }
       ?>
     </div>
+    <div class="container">
+      <a href=?controller=rappels&action=home>Retour</a>
+    </div>
   </div>
 <?php
   }else{
 ?>
   <div class="container">
-    <p>session expirée ! veuillez vous reconnecter !</p>
+    <p>Session expirée ! Veuillez vous reconnecter !</p>
     <a href=?controller=rappels&action=index>retour connection</a>
   </div>
 <?php
