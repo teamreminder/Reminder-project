@@ -43,15 +43,6 @@
       <?php
       }
       ?>
-      <?php
-        if (isset($_COOKIE['admin'])) {
-      ?>
-      <div class="col align-self-end">
-        <a href="?controller=rappels&action=index">Se déconnecter</a>
-      </div>
-      <?php
-      }
-      ?>
     </header>
     <section>
 <?php
