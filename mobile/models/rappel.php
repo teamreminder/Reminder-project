@@ -33,135 +33,151 @@ class Rappel {
 
     ?><div class="container"><h3>Créer un rappel</h3></div><?php
 
-    $requetecount = "SELECT count(id_rappel) AS nbs_rappel
-                     FROM rappel
-                     WHERE id_user='$cookie'
-                     AND date_rappel > '$today'";
-    $resultcount=$db->query($requetecount);
-    foreach ($resultcount as $value)
-    {
-      $nbs_rappel=$value['nbs_rappel'];
-    }
-    $requeteslots = "SELECT slots, email
-                     FROM user
-                     WHERE id_user='$cookie'";
-    $resultslots=$db->query($requeteslots);
-    foreach ($resultslots as $value)
-    {
-      $slots=$value['slots'];
-      $expediteur=$value['email'];
-    }
-
-    if ($nbs_rappel<$slots) {
-      $requete1 = "SELECT id_user, email, blacklist
-                   FROM user
-                   WHERE email='$email2'";
-      $result1=$db->query($requete1);
-      foreach ($result1 as $value)
-      {
-       $email=$value['email'];
-       $id_user_destinataire=$value['id_user'];
-       $blacklist=$value['blacklist'];
-      }
-      if (!isset($email)) {
-        $chars = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
-         "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
-        "N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6",
-        "7","8","9","&","#","@","+","-","*","!","=","$","%",".",",",";");
-        $indexMax = count($chars) - 1;
-        $pwd = "";
-        for($i = 0 ; $i < 10; $i++)
+    if (isset($_GET['email']) && !empty($_GET['email']) && (strlen($_GET['email']) <= 300) &&
+        isset($_GET['objet']) && !empty($_GET['objet']) && (strlen($_GET['objet']) <= 50) &&
+        isset($_GET['message']) && !empty($_GET['message']) && (strlen($_GET['message']) <= 300))
         {
-          $pwd .= $chars[rand(0,  $indexMax)];
-        }
-        $password=hash('sha512',$pwd);
-        $requete3 = "INSERT INTO  user(email,password,date_enregistrement) VALUES ('$email2','$password','$today')";
-        $db->query($requete3);
-      }
-        $requete4 = "SELECT email, id_user, blacklist
-                     FROM user
-                     WHERE email='$email2'";
-        $result4=$db->query($requete4);
-        foreach ($result4 as $value)
+
+        $requetecount = "SELECT count(id_rappel) AS nbs_rappel
+                         FROM rappel
+                         WHERE id_user='$cookie'
+                         AND date_rappel > '$today'";
+        $resultcount=$db->query($requetecount);
+        foreach ($resultcount as $value)
         {
-          $blacklist=$value['blacklist'];
-          $id_user_destinataire=$value['id_user'];
+          $nbs_rappel=$value['nbs_rappel'];
         }
-        if ($blacklist=="pas encore") {
-          $requete5="INSERT INTO rappel (id_rappel, objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire) VALUES (NULL, '$objet', '$gooddate', '$message', '$today', '$cookie', '$id_user_destinataire')";
-          $result5=$db->query($requete5);
-          $objet2="Autorisation Reminder";
-          $header="MIME-Version: 1.0\r\n";
-          $header.='From:"reminder.application.pro@gmail.com"<reminder.application.pro@gmail.com>'."\n";
-          $header.='Content-Type:text/html; charset="uft-8"'."\n";
-          $header.='Content-Transfer-Encoding: 8bit';
-
-          $message2="
-          <html>
-            <body>
-              <div align='center'>
-                <h1>Reminder</h1>
-              </div>
-              <p>Bonjour Mme/M.<br><br>Notre utilisateur $expediteur souhaite vous envoyez un mail de rappel grâce à notre application Reminder<br><br>Pour accepter cette invitation, inscrivez-vous! Cela ne prendra qu'un instant</p>
-              <br><br><a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMailTraitement&id=$id_user_destinataire' class='mailbutton'>J'accepte</a>
-              <a href='http://remind-me.fr/index.php?controller=rappels&action=refuseByMailTraitement&id=$id_user_destinataire' class='mailbutton'>Je refuse</a>
-              <style>
-              a .mailbutton {
-                 border: 1px solid #DB9000;
-                 padding: 5px;
-                 border-radius: 3px;
-                 color: #DB9000;
-                 text-decoration: none;
-                 margin: 5px;
-                }
-              </style>
-            </body>
-          </html>
-          ";
-
-          mail($email2,$objet2,$message2,$header);
-          ?>
-            <div class="container">
-              <div class="createReminderPicto">
-                <p><img src="img/warning.png"></p>
-              </div>
-              <p>Votre correspondant n'étant pas inscrit sur Reminder, nous lui avons envoyer un premier mail lui demandant son autorisation de recevoir des mails via Reminder. Si il refuse, ou ne repond avant la date du rappel, il ne le recevra pas.</p>
-            </div>
-          <?php
-        }elseif ($blacklist=="non") {
-          $requete5="INSERT INTO rappel (id_rappel, objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire) VALUES (NULL, '$objet', '$gooddate', '$message', '$today', '$cookie', '$id_user_destinataire')";
-          $result5=$db->query($requete5);
-          ?>
-            <div class="container">
-              <div class="createReminderPicto">
-                <p><img src="img/positive-vote.png"></p>
-              </div>
-              <p>Votre reminder a bien été enregistré.</p>
-            </div>
-          <?php
-        }elseif ($blacklist=="oui") {
-          ?>
-            <div class="container">
-              <div class="createReminderPicto">
-                <p><img src="img/sad.png"></p>
-              </div>
-              <p>Votre correspondant à refusé les mails provenant de Reminder.</p>
-            </div>
-          <?php
+        $requeteslots = "SELECT slots, email
+                         FROM user
+                         WHERE id_user='$cookie'";
+        $resultslots=$db->query($requeteslots);
+        foreach ($resultslots as $value)
+        {
+          $slots=$value['slots'];
+          $expediteur=$value['email'];
         }
 
-    }else{
+        if ($nbs_rappel<$slots) {
+          $requete1 = "SELECT id_user, email, blacklist
+                       FROM user
+                       WHERE email='$email2'";
+          $result1=$db->query($requete1);
+          foreach ($result1 as $value)
+          {
+           $email=$value['email'];
+           $id_user_destinataire=$value['id_user'];
+           $blacklist=$value['blacklist'];
+          }
+          if (!isset($email)) {
+            $chars = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
+             "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
+            "N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6",
+            "7","8","9","&","#","@","+","-","*","!","=","$","%",".",",",";");
+            $indexMax = count($chars) - 1;
+            $pwd = "";
+            for($i = 0 ; $i < 10; $i++)
+            {
+              $pwd .= $chars[rand(0,  $indexMax)];
+            }
+            $password=hash('sha512',$pwd);
+            $requete3 = "INSERT INTO  user(email,password,date_enregistrement) VALUES ('$email2','$password','$today')";
+            $db->query($requete3);
+          }
+            $requete4 = "SELECT email, id_user, blacklist
+                         FROM user
+                         WHERE email='$email2'";
+            $result4=$db->query($requete4);
+            foreach ($result4 as $value)
+            {
+              $blacklist=$value['blacklist'];
+              $id_user_destinataire=$value['id_user'];
+            }
+            if ($blacklist=="pas encore") {
+              $requete5="INSERT INTO rappel (id_rappel, objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire) VALUES (NULL, '$objet', '$gooddate', '$message', '$today', '$cookie', '$id_user_destinataire')";
+              $result5=$db->query($requete5);
+              $objet2="Autorisation Reminder";
+              $header="MIME-Version: 1.0\r\n";
+              $header.='From:"reminder.application.pro@gmail.com"<reminder.application.pro@gmail.com>'."\n";
+              $header.='Content-Type:text/html; charset="uft-8"'."\n";
+              $header.='Content-Transfer-Encoding: 8bit';
 
-      ?>
-        <div class="container">
-          <div class="createReminderPicto">
-            <p><img src="img/credit-card.png"></p>
+              $message2="
+              <html>
+                <body>
+                  <div align='center'>
+                    <h1>Reminder</h1>
+                  </div>
+                  <p>Bonjour Mme/M.<br><br>Notre utilisateur $expediteur souhaite vous envoyez un mail de rappel grâce à notre application Reminder<br><br>Pour accepter cette invitation, inscrivez-vous! Cela ne prendra qu'un instant</p>
+                  <br><br><a href='http://remind-me.fr/index.php?controller=rappels&action=registerByMailTraitement&id=$id_user_destinataire' class='mailbutton'>J'accepte</a>
+                  <a href='http://remind-me.fr/index.php?controller=rappels&action=refuseByMailTraitement&id=$id_user_destinataire' class='mailbutton'>Je refuse</a>
+                  <style>
+                  a .mailbutton {
+                     border: 1px solid #DB9000;
+                     padding: 5px;
+                     border-radius: 3px;
+                     color: #DB9000;
+                     text-decoration: none;
+                     margin: 5px;
+                    }
+                  </style>
+                </body>
+              </html>
+              ";
+
+              mail($email2,$objet2,$message2,$header);
+              ?>
+                <div class="container">
+                  <div class="createReminderPicto">
+                    <p><img src="img/warning.png"></p>
+                  </div>
+                  <p>Votre correspondant n'étant pas inscrit sur Reminder, nous lui avons envoyer un premier mail lui demandant son autorisation de recevoir des mails via Reminder. Si il refuse, ou ne repond avant la date du rappel, il ne le recevra pas.</p>
+                </div>
+              <?php
+            }elseif ($blacklist=="non") {
+              $requete5="INSERT INTO rappel (id_rappel, objet, date_rappel, message, date_enregistrement, id_user, id_user_etre_destinataire) VALUES (NULL, '$objet', '$gooddate', '$message', '$today', '$cookie', '$id_user_destinataire')";
+              $result5=$db->query($requete5);
+              ?>
+                <div class="container">
+                  <div class="createReminderPicto">
+                    <p><img src="img/positive-vote.png"></p>
+                  </div>
+                  <p>Votre reminder a bien été enregistré.</p>
+                </div>
+              <?php
+            }elseif ($blacklist=="oui") {
+              ?>
+                <div class="container">
+                  <div class="createReminderPicto">
+                    <p><img src="img/sad.png"></p>
+                  </div>
+                  <p>Votre correspondant à refusé les mails provenant de Reminder.</p>
+                </div>
+              <?php
+            }
+
+        }else{
+
+          ?>
+            <div class="container">
+              <div class="createReminderPicto">
+                <p><img src="img/credit-card.png"></p>
+              </div>
+              <p>Veuillez débloquer de nouveaux emplacements...</p>
+            </div>
+          <?php
+
+        }
+
+      }else{
+        ?>
+          <div class="container">
+            <div class="createReminderPicto">
+              <p><img src="img/sad.png"></p>
+            </div>
+            <p>Erreur dans le remplissage du formulaire</p>
           </div>
-          <p>Veuillez débloquer de nouveaux emplacements...</p>
-        </div>
-      <?php
-
-    }
+        <?php
+      }
 
   }
 

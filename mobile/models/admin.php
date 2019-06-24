@@ -48,7 +48,7 @@ class Admin {
   public static function listLogs(){
     $list = [];
     $db = Db::getInstance();
-    $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, date_enregistrement, slots, statut
+    $req = $db->query('SELECT id_rappel, date_rappel, email as emailDestinataire, rappel.id_user as id_expediteur, rappel.date_enregistrement, slots, statut
                         FROM rappel INNER JOIN user ON user.id_user = rappel.id_user_etre_destinataire
                         ORDER BY date_enregistrement DESC');
 
@@ -112,7 +112,7 @@ class Admin {
             <input type="hidden" name="trueAcces" value="<?php echo $pwd; ?>">
             <div class="form-group">
               <label for="CodeAcces">Code d'accès</label>
-              <input type="text" class="form-control" name="codeAcces" id="codeAcces" aria-describedby="emailHelp" placeholder="Votre code...">
+              <input type="password" class="form-control" name="codeAcces" id="codeAcces" aria-describedby="emailHelp" placeholder="Votre code...">
             </div>
             <div class="col align-self-end">
               <button type="submit" class="btn btn-primary">VALIDER</button>

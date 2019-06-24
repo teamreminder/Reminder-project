@@ -1,6 +1,6 @@
 <div class="container">
   <div class="titre">
-    <h2>SE CONNECTER</h2>
+    <h2>SE CONNECTER AU BACK-OFFICE</h2>
   </div>
   <div class="connexion">
     <form action="index.php" method="get">

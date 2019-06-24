@@ -10,19 +10,19 @@
             <input type="hidden" name="controller" value="rappels">
             <input type="hidden" name="action" value="createReminderTraitement">
             <div class="form-row">
-              <label for="inputdestinataire">Destinataire</label>
+              <label for="inputdestinataire">Destinataire *</label>
               <input type="email" name="email" class="form-control" id="filtre" placeholder="Votre destinataire...">
               <div id="exo5">
               </div>
-              <label for="inputdestinataire">Date et heure de l'envoi</label>
+              <label for="inputdestinataire">Date et heure de l'envoi *</label>
               <div class="input_datetime">
                 <input type="datetime-local" name="datetime" value="<?php echo substr($today, 0, -9); ?>" required>
               </div>
-              <label for="inputobjet">Objet</label>
+              <label for="inputobjet">Objet *</label>
               <input type="objet" name="objet" class="form-control" id="inputPassword4" placeholder="Votre objet...">
             </div>
             <div class="form-group">
-              <label for="inputcontent">Message</label>
+              <label for="inputcontent">Message *</label>
               <textarea name="message" rows="8" cols="50" placeholder="Votre message..."></textarea>
             </div>
             <div class="col align-self-end">
