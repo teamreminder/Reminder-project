@@ -2,7 +2,7 @@
   <h3>Back office</h3>
   <div class="col align-self-end">
     <a href="?controller=rappels&action=index">Se déconnecter</a>
-  </div> 
+  </div>  
   <div class="graph">
     <div class="row">
       <div class="col-lg-4">

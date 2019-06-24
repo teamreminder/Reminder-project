@@ -42,7 +42,7 @@
       </div>
       <?php
       }
-      ?> 
+      ?>  
     </header>
     <section>
 <?php
